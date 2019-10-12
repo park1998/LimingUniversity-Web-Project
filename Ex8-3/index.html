@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#contain {
+				position: relative;
+				width: 1000px;
+				height: 800px;
+				margin: 0 auto;
+				background: url(img/背景0.jpg);
+				background-size: cover;
+				margin-bottom: 100px;
+			}
+			
+			a {
+				display: inline-block;
+				text-decoration: none;
+				width: 60px;
+				height: 30px;
+				border: 2px solid teal;
+				color: white;
+				font-weight: 1000;
+				background: turquoise;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			#prebtn {
+				position: absolute;
+				top: 90px;
+				left: 160px;
+			}
+			
+			#nextbtn {
+				position: absolute;
+				left: 240px;
+				top: 90px;
+			}
+			
+			#imgdiv1,
+			#imgdiv2 {
+				position: absolute;
+				height: 460px;
+				border: 10px solid cornflowerblue;
+				background: #f1f1f1;
+				border-bottom: 40px solid cornflowerblue;
+				text-align: center;
+			}
+			
+			#imgdiv1 {
+				width: 400px;
+				top: 200px;
+				left: 60px;
+			}
+			
+			#imgdiv2 {
+				width: 300px;
+				top: 200px;
+				left: 600px;
+			}
+			
+			#img1 {
+				height: 460px;
+				width: 400px;
+			}
+			
+			#img2 {
+				height: 460px;
+				width: 300px;
+			}
+			
+			span {
+				color: white;
+				font-weight: 1000;
+			}
+			
+			#text2,
+			#text4 {
+				position: absolute;
+				bottom: -30px;
+				left: 20px;
+				font-size: 12px;
+			}
+			
+			#text1 {
+				position: absolute;
+				bottom: -30px;
+				right: 150px;
+			}
+			
+			#text3 {
+				position: absolute;
+				bottom: -30px;
+				right: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="contain">
+			<a href="#" id="prebtn">上一组</a>
+			<a href="#" id="nextbtn">下一组</a>
+			<div id="imgdiv1">
+				<img src="" id="img1">
+				<span id="text1"></span>
+				<span id="text2"></span>
+			</div>
+			<div id="imgdiv2">
+				<img src="" id="img2">
+				<span id="text3"></span>
+				<span id="text4"></span>
+			</div>
+		</div>
+
+		<script>
+			window.onload = function() {
+				var oBtnpre = document.getElementById('prebtn');
+				var oBtnnext = document.getElementById('nextbtn');
+				var oImg1 = document.getElementById('img1');
+				var oImg2 = document.getElementById('img2');
+				var oText1 = document.getElementById('text1');
+				var oText2 = document.getElementById('text2');
+				var oText3 = document.getElementById('text3');
+				var oText4 = document.getElementById('text4');
+				var arrImg1 = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 'img/5.jpg'];
+				var arrImg2 = ['img/13.jpg', 'img/12.jpg', 'img/11.jpg'];
+				var arrText1 = ['第1组第1张', '第1组第2张', '第1组第3张', '第1组第4张', '第1组第5张'];
+				var arrText2 = ['第2组第1张', '第2组第2张', '第2组第3张'];
+				var n1 = 0;
+				var n2 = 0;
+
+				function display() {
+					oImg1.src = arrImg1[n1];
+					oImg2.src = arrImg2[n2];
+					oText1.innerHTML = arrText1[n1];
+					oText3.innerHTML = arrText2[n2];
+					oText2.innerHTML = 1 + n1 + '/' + arrImg1.length;
+					oText4.innerHTML = 1 + n2 + '/' + arrImg2.length;
+				}
+				display();
+
+				oBtnpre.onclick = function() {
+					n1--;
+					n2--;
+					if(n1 == -1) {
+						n1 = arrImg1.length - 1;
+					}
+					if(n2 == -1) {
+						n2 = arrImg2.length - 1;
+					}
+					display();
+				}
+
+				oBtnnext.onclick = function() {
+					n1++;
+					n2++;
+					if(n1 == arrImg1.length) {
+						n1 = 0;
+					}
+					if(n2 == arrImg2.length) {
+						n2 = 0;
+					}
+					display();
+				}
+
+				oImg1.onclick = function() {
+					n1++;
+					if(n1 == arrImg1.length)
+						n1 = 0;
+					display();
+				}
+
+				oImg2.onclick = function() {
+					n2++;
+					if(n2 == arrImg2.length)
+						n2 = 0;
+					display();
+				}
+			};
+		</script>
+	</body>
+
+</html>

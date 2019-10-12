@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var arr = ['他曾立下奇功与彭德怀等人齐名 如今却鲜为人知',
+					'为何世界级企业都盯上这座中国城市 ? 答案就两个字',
+					'印度“ 反恐要求” 受阻不满 将怒火撒向中国',
+					'德媒： 前总统在中国找到新工作 以私人身份进行'
+				]
+				
+				var oBtn=document.getElementById('btn');
+				var oUL=document.getElementById('UL');
+				var onoff=true;
+				
+				oBtn.onclick=function(){
+					
+//					oBtn.disabled=true;
+//					oBtn.style.display='none';
+                    
+//                  oUL.innerHTML='';
+				if(onoff)
+			    {   
+			    	onoff=false;
+					for(i=0;i<arr.length;i++)
+					{
+						oUL.innerHTML+='<li>'+arr[i]+'</li>';
+					}
+				}
+			    
+				};
+				
+				
+			};
+		</script>
+	</head>
+
+	<body>
+		<input id="btn" type="button" value="按钮" />
+		<ul id="UL"></ul>
+	</body>
+
+</html>

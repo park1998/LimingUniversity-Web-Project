@@ -1,0 +1,97 @@
+body {
+	background: #ffffff;
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.big-body {
+	width: 100%;
+	margin: 0 auto;
+	/*display: flex;*/
+}
+
+.topnav {
+	height: 60px;
+	background: #283e5c;
+}
+
+.topnav-title {
+	color: white;
+	list-style: none;
+	line-height: 60px;
+	font-size: 24px;
+	margin-left: 16%;
+}
+
+.topnav-ul {
+	float: right;
+	color: white;
+	margin-right: 20%;
+}
+
+.topnav-ul li {
+	float: left;
+	width: 80px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+
+.container {
+	height: 600px;
+	width: 1200px;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 50px;
+}
+
+.form-label {
+	margin-left: 20px;
+	margin-top: 3px;
+}
+
+.form-input {
+	margin-top: -2x;
+	margin-left: 20px;
+}
+
+.label-input {
+	margin-top: 60px;
+	margin-bottom: -20px;
+}
+
+#button {
+	margin-left: 220px;
+	height: 34px;
+	margin-top: 16px;
+	background: #4688f1;
+	border: 1px solid white;
+	color: white;
+}
+
+#img {
+	float: right;
+	width: 340px;
+	height: 184px;
+	margin-top: -200px;
+	margin-right: 20px;
+}
+
+#line {
+	height: 184px;
+	width: 1px;
+	background: #eeeeee;
+	float: right;
+	margin-top: -200px;
+	margin-right: 380px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			ul,
+			h2 {
+				padding: 0;
+				margin: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			#UL {
+				width: 240px;
+				border: 1px solid #333;
+				margin: 0 auto;
+			}
+			
+			#UL ul {
+				display: none;
+			}
+			
+			#UL h2 {
+				font-size: 18px;
+				height: 30px;
+				line-height: 30px;
+				background: url(img/右边小三角.jpg) no-repeat 5px center #6ff;
+				text-indent: 20px;
+			}
+			
+			#UL ul li {
+				border-bottom: 1px solid black;
+				line-height: 24px;
+				text-indent: 24px;
+			}
+			.hover{
+				background: blue;
+			}
+			#UL .active {
+				background: url(img/下方小三角.jpg) no-repeat 5px center #ff9;
+				text-indent: 20px
+			}
+   
+		</style>
+	</head>
+
+	<body>
+		<ul id="UL">
+			<li class="list">
+				<h2>我的好友</h2>
+				<ul>
+					<li>张三</li>
+					<li>张三</li>
+					<li>张三</li>
+				</ul>
+			</li>
+			<li class="list">
+				<h2>企业好友</h2>
+				<ul>
+					<li>李四</li>
+					<li>李四</li>
+					<li>李四</li>
+				</ul>
+			</li>
+			<li class="list">
+				<h2>黑名单</h2>
+				<ul>
+					<li>张小三</li>
+					<li>李小四</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			window.onload = function() {
+				var oUL = document.getElementById('UL');
+				var aH2 = oUL.getElementsByTagName('h2');
+				var aUL = oUL.getElementsByTagName('ul');
+				var aLI = null;
+				var arrLI=[];
+				
+
+				for(var i = 0; i < aH2.length; i++) {
+					aH2[i].index = i;
+					aH2[i].onclick = function() {
+						if(this.className == '') {
+							for(var i=0;i<aH2.length;i++)
+							{
+								aUL[i].style.display = 'none';
+								aH2[i].className = '';
+							}
+							aUL[this.index].style.display = 'block';
+							this.className = 'active';
+						} else {
+							aUL[this.index].style.display = 'none';
+							this.className = '';
+						}
+					};
+				}
+			   
+			    for(var i=0;i<aUL.length;i++)
+			    {
+			    	aLI=aUL[i].getElementsByTagName('li');
+			    	for(var j=0;j<aLI.length;j++)
+			    	{
+
+			    		arrLI.push(aLI[j]);
+			    	}
+			    }
+			
+			   
+			    for(var i=0;i<arrLI.length;i++){
+			    	arrLI[i].index=i;
+			    	arrLI[i].onClick=function(){
+			    		if(this.className==''){
+			    			
+			    			arrLI[i].className='hover';
+			    		}
+			    		
+			    	};
+			    }
+	
+			};
+			
+		</script>
+	</body>
+
+</html>

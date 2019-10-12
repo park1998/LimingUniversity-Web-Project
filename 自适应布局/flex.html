@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				display: flex;
+				display: -webkit-flex;
+				/*水平方向，左端对齐*/
+				/*flex-direction: row;*/
+				/*水平方向，右端对齐*/
+				/*flex-direction: row-reverse;*/
+				/*垂直方向，顶部对齐*/
+				/*flex-direction: column;*/
+				/*垂直方向，底部对齐*/
+				/*flex-direction: column-reverse;*/
+				/*换行*/
+				/*flex-wrap: wrap;*/
+				/*不换行，默认*/
+				/*flex-wrap: nowrap;*/
+				/*换行，第一行在下方*/
+				/*flex-wrap: wrap-reverse;*/
+				/*flex-direction 与 flex-warp的简写模式*/
+				/*flex-flow:row wrap;*/
+				/*内容在头部*/
+				/*justify-content: flex-start;*/
+				/*内容在尾部*/
+				/*justify-content: flex-end;*/
+				/*内容在中间*/
+				/*justify-content: center;*/
+				/*内容等间距隔开*/
+				/*justify-content: space-between;*/
+				/*内容向中间靠拢*/
+				/*justify-content: space-around;*/
+				/*align-items: flex-start;
+				align-items: flex-end;
+				align-items: stretch;*/
+				background: #999;
+				width: 100%;
+			}
+			
+			.box {
+				display: flex;
+				display: -webkit-flex;
+				/*纵轴的顶部对齐*/
+				/*align-items: flex-start;*/
+				/*纵轴的底部对齐*/
+				/*align-items: flex-end;*/
+				/*纵轴的中点对齐*/
+				/*align-items: center;*/
+				/*项目的第一行文字的基线对齐*/
+				/*align-items: baseline;*/
+				/*默认对齐方式，如果项目未设置高度或设为auto，将占满整个容器的高度*/
+				/*align-items: stretch;*/
+				flex-wrap: wrap;
+				align-content: flex-end;
+				background: #999;
+				 width: 600px;
+                 height: 300px;
+			}
+			.box span {
+				margin: 10px 10px;
+				padding: 10px;
+				background: #ff0;
+				width: 50px;
+			}
+			
+			/*.box span:nth-of-type(2n) {
+				height: 80px;
+				padding-top: 20px;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<span>你好1</span>
+			<span>你好2</span>
+			<span>你好3</span>
+			<span>你好4</span>
+			<span>你好3</span>
+			<span>你好4</span>
+		</div>
+	</body>
+
+</html>

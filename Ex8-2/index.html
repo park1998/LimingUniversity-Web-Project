@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#content {
+				width: 400px;
+				height: 400px;
+				border: solid 10px gray;
+				position: relative;
+				margin: 0 auto;
+				background: #f1f1f1;
+			}
+			
+			#content a {
+				width: 40px;
+				height: 40px;
+				border: 5px solid white;
+				background: black;
+				position: absolute;
+				top: 175px;
+				text-decoration: none;
+				line-height: 40px;
+				color: white;
+				font-size: 30px;
+				font-weight: bold;
+				text-align: center;
+				opacity: 0.6;
+			}
+			
+			#content a:hover {
+				opacity: 0.9;
+			}
+			
+			#prev {
+				left: 10px;
+			}
+			
+			#next {
+				right: 10px;
+			}
+			
+			#span1,
+			#text1 {
+				width: 400px;
+				height: 30px;
+				background: black;
+				opacity: 0.6;
+				color: white;
+				position: absolute;
+				text-align: center;
+				line-height: 30px;
+				font-size: 18px;
+			}
+			
+			#span1 {
+				top: 0;
+				margin: 0px;
+			}
+			
+			#text1 {
+				bottom: 0;
+				margin: 0px;
+			}
+			
+			#header {
+				height: 40px;
+				width: 148px;
+				border: none;
+				margin: 0 auto;
+			}
+			
+			#text-tishi {
+				margin: 0 auto;
+				width: 360px;
+				border: none;
+				font-size: 20px;
+				margin-bottom: 22px;
+			}
+			
+			#tishi {
+				text-align: center;
+			}
+			
+			#UL {
+				position: absolute;
+				bottom: 20px;
+				left: 105px;
+			}
+			
+			#UL li {
+				list-style: none;
+				width: 20px;
+				height: 20px;
+				background: dodgerblue;
+				border: 2px solid teal;
+				display: inline-block;
+				border-radius: 20px;
+				margin: 2px;
+			}
+			
+			#UL li:hover{
+				background: teal;
+				border: 2px solid dodgerblue;
+			}
+			
+			.little1 {
+				width: 110px;
+				height: 80px;
+				border: 5px solid whitesmoke;
+				background: url(img/A1.jpg);
+				position: absolute;
+				bottom: 80px;
+				left: 105px;
+			}
+			
+			.little2 {
+				width: 110px;
+				height: 80px;
+				border: 5px solid whitesmoke;
+				background: url(img/A2.jpg);
+				position: absolute;
+				bottom: 80px;
+				left: 130px;
+			}
+			
+			.little3 {
+				width: 110px;
+				height: 80px;
+				border: 5px solid whitesmoke;
+				background: url(img/A3.jpg);
+				position: absolute;
+				bottom: 80px;
+				left: 155px;
+			}
+			
+			.little4 {
+				width: 110px;
+				height: 80px;
+				border: 5px solid whitesmoke;
+				background: url(img/A4.jpg);
+				position: absolute;
+				bottom: 80px;
+				left: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="header">
+			<input id="xunhuang" value="循环切换" type="button" />
+			<input id="shunxu" value="顺序切换" type="button" />
+		</div>
+		<div id="text-tishi">
+			<span id="tishi"></span>
+		</div>
+		<div id="content">
+			<div id="Litttle"></div>
+			<ul id="UL">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<a id="prev" href="#">&lt;</a>
+			<a id="next" href="#">&gt;</a>
+			<img id="img" width="400px" height="400px" />
+			<span id="span1">数量正在计算中...</span>
+			<p id="text1">图片正在加载中...</p>
+		</div>
+		<script>
+			window.onload = function() {
+				var oxunhuang = document.getElementById('xunhuang');
+				var oshunxu = document.getElementById('shunxu');
+
+				var otishi = document.getElementById('tishi');
+
+				var oprev = document.getElementById('prev');
+				var onext = document.getElementById('next');
+				var otext = document.getElementById('text1');
+				var ospan = document.getElementById('span1');
+				var oimg = document.getElementById('img');
+
+				var ali = document.getElementsByTagName('li');
+				var oLT = document.getElementById('Litttle');
+
+				var arrUrl = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg'];
+				var arrText = ['Q版不二周助', '手冢国光', '不二周助', '辛村精市'];
+
+				var num = 0;
+
+				//初始化
+				function fntab() {
+					ospan.innerHTML = num + 1 + '/' + arrText.length;
+					oimg.src = arrUrl[num];
+					otext.innerHTML = arrText[num];
+				}
+				fntab();
+
+				oxunhuang.onclick = function() {
+					otishi.innerHTML = '图片可从第一张跳到最后一张循环切换！';
+					onext.onclick = function() {
+						num++;
+						if(num == arrText.length) {
+							num = 0;
+						}
+						fntab();
+					};
+
+					oprev.onclick = function() {
+						num--;
+						if(num == -1) {
+							num = arrText.length - 1;
+						}
+						fntab();
+					};
+				};
+
+				oshunxu.onclick = function() {
+					otishi.innerHTML = '图片只能到第一张或者最后一张来切换！';
+					onext.onclick = function() {
+						num++;
+						if(num == arrText.length) {
+							alert('这已经是最后一张图片了！');
+							num = 3;
+						}
+						fntab();
+					};
+
+					oprev.onclick = function() {
+						num--;
+						if(num == -1) {
+							alert('这已经是第一张图片了，不能再往前啦！');
+							num = 0;
+						}
+						fntab();
+					};
+				};
+
+				ali[0].onclick = function() {
+					for(var j = 0; j <= 1; j++) {
+						oimg.src = arrUrl[j - 1];
+						ospan.innerHTML = num + 1 + '/' + arrText.length;
+						otext.innerHTML = arrText[num];
+					}
+				};
+				ali[1].onclick = function() {
+					for(var j = 0; j <= 1; j++) {
+						oimg.src = arrUrl[j];
+						ospan.innerHTML = num + 2 + '/' + arrText.length;
+						otext.innerHTML = arrText[num + 1];
+					}
+				};
+				ali[2].onclick = function() {
+					for(var j = 0; j <= 1; j++) {
+						oimg.src = arrUrl[j + 1];
+						ospan.innerHTML = num + 3 + '/' + arrText.length;
+						otext.innerHTML = arrText[num + 2];
+					}
+				};
+				ali[3].onclick = function() {
+					for(var j = 0; j <= 1; j++) {
+						oimg.src = arrUrl[j + 2];
+						ospan.innerHTML = num + 4 + '/' + arrText.length;
+						otext.innerHTML = arrText[num + 3];
+					}
+				};
+
+				ali[0].onmouseover = function() {
+					oLT.className = 'little1';
+				};
+				ali[0].onmouseout = function() {
+					oLT.className = '';
+				};
+				ali[1].onmouseover = function() {
+					oLT.className = 'little2';
+				};
+				ali[1].onmouseout = function() {
+					oLT.className = '';
+				};
+				ali[2].onmouseover = function() {
+					oLT.className = 'little3';
+				};
+				ali[2].onmouseout = function() {
+					oLT.className = '';
+				};
+				ali[3].onmouseover = function() {
+					oLT.className = 'little4';
+				};
+				ali[3].onmouseout = function() {
+					oLT.className = '';
+				};
+			};
+		</script>
+	</body>
+
+</html>

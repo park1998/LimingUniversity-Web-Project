@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.Grid {
+	display: flex;
+}
+
+.Grid-cell {
+	flex: 1;
+	font-size: 21px;
+	font-family: arial;
+	margin: 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	background: #f4f3f0;
+	padding: 10px;
+}
+
+.p1 {
+	height: 180px;
+	text-align: left;
+	line-height: 24px;
+}
+
+.p2 {
+	height: 180px;
+	text-align: left;
+	line-height: 24px;
+}
+
+.nice-1 {
+	flex: 0 0 46.7%;
+	;
+}
+
+.nice-2 {
+	flex: 0 0 30%;
+}
+
+.nice-3 {
+	flex: 0 0 20%;
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="Grid">
+			<div class="Grid-cell">1/2</div>
+			<div class="Grid-cell">1/2</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell">1/3</div>
+			<div class="Grid-cell">1/3</div>
+			<div class="Grid-cell">1/3</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell">1/4</div>
+			<div class="Grid-cell">1/4</div>
+			<div class="Grid-cell">1/4</div>
+			<div class="Grid-cell">1/4</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell p1">
+				<p>Full-height, even when my content doesn't fill the space.</p>
+			</div>
+			<div class="Grid-cell p2">
+				<p>Full-height, even when my content doesn't fill the space.Full-height, even when my content doesn't fill the space.Full-height, even when my content doesn't fill the space.Full-height, even when my content doesn't fill the space.</p>
+			</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell  nice-1">1/2</div>
+			<div class="Grid-cell">auto</div>
+			<div class="Grid-cell">auto</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell">auto</div>
+			<div class="Grid-cell  nice-2">1/3</div>
+		</div>
+		<div class="Grid">
+			<div class="Grid-cell  nice-3">1/4</div>
+			<div class="Grid-cell">auto</div>
+			<div class="Grid-cell  nice-2">1/3</div>
+		</div>
+	</body>
+
+</html>

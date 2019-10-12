@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=1200" />
+		<title>水木年华家教</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/code.css">
+		<!--[if IE 6]>
+    <script type="text/javascript">
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+		<!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+
+		<script src="js/jQuery.rTabs.js"></script>
+		<script src="js/search_tab.js"></script>
+
+		<link href="js/brief.css" rel="stylesheet" />
+		<script src="js/jquery.artDialog.min.js"></script>
+
+		<!--[if IE 6]>
+    <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.png_img img,.png');
+    </script>
+    <![endif]-->
+
+		<link href="css/jquery.datetimepicker.css" rel="stylesheet" />
+		<script src="js/jquery.datetimepicker.js"></script>
+
+	</head>
+
+	<body>
+
+		<input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/account/login?returnUrl=http://qz.ygjj.com/user/judge" />
+		<div class="header min_1200">
+			<div class="w_1200">
+				<h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+
+				<!--star搜索-->
+				<div class="pub-search">
+					<form class="search-form" method="GET" action="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">
+						<div class="search-box">
+							<ul class="transition_a">
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="学员搜索" target="http://qz.ygjj.com/xy_a0_s0_d0_x0_t0_o0_g1">学员</li>
+							</ul>
+							<input placeholder="搜教员\搜学员" type="text" name="keyword" value="" />
+							<input type="button" class="search_btn" value="搜索">
+						</div>
+					</form>
+				</div>
+				<!--end搜索-->
+				<div class="header_r fr">
+					<span class="font_16">客服微信：</span>
+					<img src="images/kefu.png" class="wechat_img" alt="水木年华家教客服微信" width="80" height="80">
+
+					<span class="font_13">
+                    <b class="orange_link">
+                        <a href="/account/logout" class="heada">退出</a>
+                    </b>
+                    <em class="china"></em>
+                    <b class="orange_link">
+                        <a href="/User/Index" class="heada">我的</a>
+                    </b>
+                                                            </span>
+				</div>
+				<!--end头文件右-->
+			</div>
+		</div>
+		<!--end头文件-->
+
+		<!--end头文件-->
+
+		<div class="nav min_1200">
+			<div class="tnav w_1200" id="slideNav">
+				<span><a href="/home" class="current_nav">泉州家教</a></span>
+				<span><a href="/home/cost">家教价格</a></span>
+				<span><a href="/Teachers.aspx">家教老师库</a></span>
+				<span><a href="/Orders.aspx">学员库</a></span>
+				<i class="tavline" id="slideNavLine"></i>
+			</div>
+		</div>
+
+		<div class="tearch_banner min_1200 studen_banner">
+			<div class="w_1200">
+				<dl class="studen_banner_dl png_img">
+					<dd class="r_cell">
+						<ul class="list_ul gray_link gray_text">
+							<li><span class="font_34 eng">0</span>
+								<p>累计发布需求</p>
+							</li>
+							<li><span class="font_34 eng">0</span>
+								<p>累计选择授课教员</p>
+							</li>
+							<li><span class="font_34 eng">0</span>
+								<p>当前发布中需求</p>
+							</li>
+						</ul>
+						<div class="btn_r">
+							<a href="/user/publish" class="round_m png write_btn">立即发布需求</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--end一行-->
+		<!-- end nav -->
+		<div class="w_1200 d_center white_bj">
+			<div class="fl w_300 box_line">
+				<dl class="tearch_l_nav">
+					<dt><span>快捷操作</span></dt>
+					<dd>
+						<div class="t clearfix">
+							<h5>家教管理</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/publish">发布需求</a>
+								</li>
+								<li>
+									<a href="/user/orderlist">我的订单</a>
+								</li>
+								<li>
+									<a href="/user/myview">查看记录</a>
+								</li>
+								<li>
+									<a href="/user/appoint">预约记录</a>
+								</li>
+								<li>
+									<a href="/user/judge">评价教员</a>
+								</li>
+								<li>
+									<a href="/user/favourite">我的收藏</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>积分</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/pay">购买积分</a>
+								</li>
+								<li>
+									<a href="/user/scorerecord">积分记录</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>帐户管理</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/profile">基本信息</a>
+								</li>
+								<li>
+									<a href="/user/password">更改密码</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<!--end一行的左-->
+			<div class="r_cell box_r">
+				<h4 class="r_th_y"><b>评价教员</b></h4>
+
+				<ul class="tearch_ul_pic tearch_ul_pic_bbs clearfix round_img" id="ulSuccess">
+				</ul>
+
+				<dl class="page_o page_c">
+					<dd class="page_r">
+
+					</dd>
+				</dl>
+
+			</div>
+			<!--end一行的右-->
+
+			<div class="cd-popup" id="ShowModal">
+				<div class="cd-popup-container" style="width: 730px;">
+					<a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+					<h4 class="f_code_th">评价详情<p>查看学员对您的相关评价</p></h4>
+
+					<div class="look_box clearfix">
+						<div class="text clearfix">
+							<span class="fl">授课科目：</span>
+							<div class="r_cell">
+								<span id="SubjectNameV"></span>
+								<span class="m_l font_13 gray_text">
+                        (评价时间 <span id="CreateTimeV"></span>)
+								</span>
+							</div>
+						</div>
+						<div class="text clearfix">
+							<span class="fl">授课时间：</span>
+							<div class="r_cell" id="TeachTimeV"></div>
+						</div>
+						<ul class="list_2 d">
+							<li>
+								<span class="fl">综合评星：</span>
+								<div class="r_cell"><span class="png star" id="zhpxV"></span></div>
+							</li>
+							<li>
+								<span class="fl">教学风格：</span>
+								<div class="r_cell"><span class="png star " id="jxfgV"></span></div>
+							</li>
+
+							<li>
+								<span class="fl">责&nbsp;&nbsp;任&nbsp;&nbsp;心：</span>
+								<div class="r_cell"><span class="png star" id="zrxV"></span></div>
+							</li>
+							<li>
+								<span class="fl">成绩提升：</span>
+								<div class="r_cell"><span class="png star" id="cjtsV"></span></div>
+							</li>
+						</ul>
+						<div class="text clearfix">
+							<span class="fl">评&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语：</span>
+							<div class="r_cell" id="ContentV"></div>
+						</div>
+					</div>
+					<!--end一行-->
+					<!--<div class="btn_20"><a href="###" class="cd-popup-close transition_a round_m btn_border_gray">清空并退出</a><a href="###" class="round_m submit_btn transition_a">确认提交</a></div>-->
+					<!--end按钮-->
+
+				</div>
+			</div>
+
+			<div class="cd-popup" id="EditModal">
+				<div class="cd-popup-container1" style="width:730px;">
+					<a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+					<h4 class="f_code_th">填写评价<p>请客观真实评价，您的每一份评价都将是其他学员参考的依据</p></h4>
+					<table class="fill_table fill_table_code">
+						<tbody>
+							<tr>
+								<th>授课科目：</th>
+								<td id="tdSubject">
+									<div class="dtdropsel dtdropsel_log divselect" style="z-index:12;">
+										<cite></cite>
+										<ul class="dtselect_list" id="ulSubject"></ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>授课时间：</th>
+								<td>
+									<input type="text" class="fill_text date_text png datetimepicker" id="start" value="">
+									<span class="m_t">~</span>
+									<input type="text" class="fill_text date_text png datetimepicker" id="end" value="">
+								</td>
+							</tr>
+							<tr>
+								<th>教学风格：</th>
+								<td>
+									<ul class="pfxtFen" title="双击取消评分" id="ulJXFG">
+										<li>1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>责任心：</th>
+								<td>
+									<ul class="pfxtFen" title="双击取消评分" id="ulZRX">
+										<li>1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>成绩提升：</th>
+								<td>
+									<ul class="pfxtFen" title="双击取消评分" id="ulCJTS">
+										<li>1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>4</li>
+										<li>5</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class="t">
+								<th><label for="content">评语：</label></th>
+								<td><textarea class="fill_textarea" id="content" name="content" style="height: 50px;"></textarea></td>
+							</tr>
+
+						</tbody>
+					</table>
+
+					<div class="btn_20">
+						<a href="javascript:void(0)" class="cd-popup-close transition_a round_m btn_border_gray">取消</a>
+						<a href="javascript:void(0)" class="round_m submit_btn transition_a">确认提交</a>
+					</div>
+					<!--end按钮-->
+				</div>
+			</div>
+
+			<script>
+				$(function() {
+
+					//简洁用户评分代码
+					$(".pfxtFen li").click(function() {
+						$(this).addClass("pfxtCur");
+						$(this).prevAll().addClass("pfxtCur");
+						$(this).nextAll().removeClass("pfxtCur");
+					});
+
+					$(".pfxtFen li").dblclick(function() {
+						$(".pfxtFen li").removeClass("pfxtCur");
+					});
+
+					//查看评价
+					$(".btnview").click(function() {
+						var $this = $(this);
+						var id = $this.closest("div").data("id");
+						$.post("/user/GetStudentSummary", {
+							id: id
+						}, function(res) {
+							if(res.success) {
+								$("#SubjectNameV").text(res.entity.SubjectName);
+								$("#CreateTimeV").text(GetUnixDate(res.entity.CreateTime));
+								$("#ContentV").text(res.entity.Content);
+								$("#TeachTimeV").text(GetUnixDate(res.entity.StartDate) + ' - ' + GetUnixDate(res.entity.EndDate));
+								$("#zhpxV").attr("class", "png star").addClass("star_" + res.entity.StarZHPX);
+								$("#jxfgV").attr("class", "png star").addClass("star_" + res.entity.StarJXFG);
+								$("#zrxV").attr("class", "png star").addClass("star_" + res.entity.StartZRX);
+								$("#cjtsV").attr("class", "png star").addClass("star_" + res.entity.StartCJTS);
+
+								$this.showPop();
+							} else {
+								alert("查看失败!");
+							}
+						});
+					});
+
+					$(".btnsummary").click(function() {
+						var $this = $(this);
+						$this.closest("li").addClass("active").siblings().removeClass("active");
+
+						var subjectids = $this.closest("div").data("subjectids");
+						var subjectnames = $this.closest("div").data("subjectnames");
+
+						var html = '';
+						var listSubjectId, listSubjectName;
+						if(subjectids.toString().indexOf(',') > 0) {
+							listSubjectId = subjectids.split(",");
+						} else {
+							listSubjectId = [subjectids];
+						}
+						if(subjectnames.toString().indexOf(',') > 0) {
+							listSubjectName = subjectnames.split(",");
+						} else {
+							listSubjectName = [subjectnames];
+						}
+						for(var i = 0; i < listSubjectId.length; i++) {
+							if(listSubjectName[i]) {
+								html += "<li data-id='" + listSubjectId[i] + "'>" + listSubjectName[i] + "</li>";
+							}
+						}
+
+						$("#ulSubject").empty();
+						$("#ulSubject").append(html);
+
+						$this.showPop();
+					});
+					$(".submit_btn").click(function() {
+						//授课Id
+						var id = $("#ulSuccess li[class='clearfix li_o active']").data("id");
+						if(id) {
+							var data = {};
+							data.successid = id;
+							data.subjectid = $("#tdSubject").GetCiteValue();
+							data.subjectname = $("#tdSubject").GetCiteText();
+							data.start = $("#start").val();
+							data.end = $("#end").val();
+							data.content = $.trim($("#content").val());
+							if(data.content == '') {
+								alert('请填写评语');
+								return false;
+							}
+
+							data.jxfg = $("#ulJXFG li[class='pfxtCur']").length;
+							if(data.jxfg <= 0) {
+								alert('请评分教学风格');
+								return false;
+							}
+							data.zrx = $("#ulZRX li[class='pfxtCur']").length;
+							if(data.zrx <= 0) {
+								alert('请评分责任心');
+								return false;
+							}
+							data.cjts = $("#ulCJTS li[class='pfxtCur']").length;
+							if(data.cjts <= 0) {
+								alert('请评分成绩提升');
+								return false;
+							}
+							//data.zhpx = $("#ulZHPX li[class='pfxtCur']").length;
+							//if (data.zhpx <= 0) {
+							//    alert('请评分综合评星');
+							//    return false;
+							//}
+
+							if(data.start == '') {
+								alert('请选择开始时间');
+								return false;
+							}
+							if(data.end == '') {
+								alert('请选择结束时间');
+								return false;
+							}
+							if(new Date(data.start) >= new Date(data.end)) {
+								alert('开始时间不得大于结束时间');
+								return false;
+							}
+							//console.log(data);
+							$.post("/user/AddSummarySuccess", data, function(res) {
+								alert(res.message);
+								window.location.reload();
+								return false;
+							});
+						} else {
+							alert("提交失败!");
+						}
+					});
+				});
+			</script>
+			<!--end一行的右-->
+		</div>
+		<!--end一行-->
+
+		<div class="clearfix d_link min_1200">
+			<div class="clearfix w_1200 d_link">
+				<div class="d_link_t clearfix">
+					<div class="d_link_tel fl">
+						<h4>服务热线</h4>
+						<p>(工作日9:00~18:00)</p>
+						<div class="d orange_text big_num font_34">400-000-0000</div>
+					</div>
+					<div class="r_cell">
+						<ul class="d_link_ul list_4 fl">
+							<li>
+								<h4>会员指南</h4>
+								<p>
+									<a href="/help/iam2" rel="nofollow">我是教员</a>
+								</p>
+								<p>
+									<a href="/help/iam1" rel="nofollow">我是学员</a>
+								</p>
+								<p>
+									<a href="/help/iam3" rel="nofollow">我是辅导班</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>网站导航</h4>
+								<p>
+									<a href="/home/subject" rel="nofollow">课程科目</a>
+								</p>
+								<p>
+									<a href="/help" rel="nofollow">帮助中心</a>
+								</p>
+								<p>
+									<a href="http://www.ygjj.com" rel="nofollow">服务城市</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>简介</h4>
+								<p>
+									<a href="/help/aboutus" rel="nofollow">关于我们</a>
+								</p>
+								<p>
+									<a href="/help/service" rel="nofollow">服务声明</a>
+								</p>
+								<p>
+									<a href="/help/Pivacy" rel="nofollow">隐私保护</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>合作</h4>
+								<p>
+									<a href="/help/friendlink" rel="nofollow">友情链接</a>
+								</p>
+							</li>
+						</ul>
+						<div class="r_cell d_link_wechat">
+							<h4>关注微信</h4>
+							<p><img src="images/kefu.png" alt="" width="120" height="120"></p>
+						</div>
+					</div>
+				</div>
+				<!--end一行-->
+				<!--end热门城市-->
+			</div>
+		</div>
+		<!--end链接-->
+			<!--end友情链接-->
+		</div>
+
+		<!--返回顶部-->
+		<div class="ftool_top">
+			<a href="#" class="top_ftoolab transition_a" id="ftoolTop"></a>
+		</div>
+		<!--返回顶部-->
+
+</html>

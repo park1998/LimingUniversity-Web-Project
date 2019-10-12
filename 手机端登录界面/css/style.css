@@ -1,0 +1,51 @@
+.container
+{
+	height: 700px;
+	width: 400px;
+	border: 1px solid transparent;
+	background: url(../img/浩瀚宇宙.jpeg);
+	position: relative;
+}
+h1{
+	color: white;
+	position: absolute;
+	top: 120px;
+	left: 126px;
+}
+.form-horizontal
+{
+	padding-top:300px ;
+	padding-left:20px ;
+}
+.btn 
+{   
+	margin-top:10px ;
+	color: white;
+	font-family: "微软雅黑";
+	font-size: 26px;
+	height: 60px;
+	width: 330px;
+	background: #08d088;
+}
+label
+{
+	color: white;
+}
+.form-control
+{   
+	color: white;
+	background: transparent;
+	width: 330px;
+}
+a{
+	color: white;
+	display: inline-block;
+}
+.text-yan
+{
+	margin-left: 184px;
+}
+.form-group
+{
+	margin-bottom:24px ;
+}

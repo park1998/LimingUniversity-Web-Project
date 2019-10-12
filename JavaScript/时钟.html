@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		    function toDou(n)
+		    {
+		    	if(n<10)
+		    	{
+		    		return '0'+n;
+		    	}
+		    	else
+		    	{
+		    		return ''+n;
+		    	}
+		    }
+			window.onload=function(){
+				var aImg=document.getElementsByTagName('img');
+//				var str='012321';
+              function tick() {
+              	 var oDate=new Date();
+                var str=toDou(oDate.getHours()) +toDou(oDate.getMinutes()) +toDou(oDate.getSeconds()) ;
+				for(var i=0;i<aImg.length;i++)
+				{
+					aImg[i].src='img/'+str.charAt(i)+'.png';
+				}
+              }
+               setInterval(tick,1000);
+               tick();
+			}
+		</script>
+	</head>
+	<body style="background: black;color: white;font-size: 50px;">
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+		:
+		<img src="img/0.png" />
+		<img src="img/0.png" />
+	</body>
+</html>

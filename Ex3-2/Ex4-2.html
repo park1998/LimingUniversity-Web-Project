@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  	var h = 0;
+  	var m = 0;
+    var s = 55;
+    function startTime() 
+    {   
+        var today = new Date();
+        document.getElementById('txt').innerHTML =h+":"+m+":"+s;
+        s = s+1; 
+        t = setTimeout('startTime()',2500);
+        if(s>59)
+        {
+        	s=0;
+        	m=m+1;
+        }
+    }
+    
+    function stopTime()
+    {
+    	  clearInterval(t);
+    }
+
+    function re()
+    {
+    	m=0;
+    	s=55;
+    	document.getElementById('txt').innerHTML =m+":"+s;
+    }
+  </script> 
+</head>
+<body onload="startTime()">
+
+     <div id="txt"></div>
+     <button onclick="startTime()"id="start">继续</button>
+     <button onclick="stopTime()"id="txt">停止</button>
+     <button onclick="re()" id="txt">重置</button>
+     
+</body>
+</html>

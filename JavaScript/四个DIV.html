@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				float: left;
+				margin: 10px;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var ediv=document.getElementsByTagName('div');
+				for(var i=0;i<=ediv.length;i++)
+				{
+					ediv[i].style.background='red';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

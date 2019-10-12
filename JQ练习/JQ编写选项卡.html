@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<title></title>
+		<style>
+          #div11 div{
+          	width: 200px;
+          	height: 200px;
+          	border: 1px solid red;
+          	display: none;
+          }
+          .active{
+          	background: red;
+          }
+		</style>
+	</head>
+
+	<body>
+		<div id="div11">
+			<input class="active" type="button" value="A" />
+			<input type="button" value="B" />
+			<input type="button" value="C" />
+			<div style="display: block;">1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+	</body>
+    <script>
+    	$(function(){
+    		$('#div11').find('input').click(function(){
+    			$('#div11').find('input').attr('class','');
+    			$('#div11').find('div').css('display','none');
+    			
+    			$(this).attr('class','active');
+    			$('#div11').find('div').eq($(this).index()).css('display','block');
+    		});
+    	});
+    </script>
+</html>

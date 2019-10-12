@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				background: green;
+			}
+		</style>
+		<script>
+			function change(name,value){
+				var odiv=document.getElementById('div1');
+				odiv['style'][name]=value;   //[]跟.作用一样   []能变  .不行
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="变高" onclick="change('height','400px')" />
+		<input type="button" value="变宽" onclick="change('width','400px')" />
+		<input type="button" value="变黄" onclick="change('background','yellow')" />
+		<div id="div1"></div>
+	</body>
+</html>

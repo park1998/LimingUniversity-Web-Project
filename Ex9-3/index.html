@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+	</head>
+
+	<body>
+		<ul id="List">
+			<li>
+				<input type="button" value="-" />
+				<strong>0</strong>
+				<input type="button" value="+" /> 单价： <em>12.5元</em> 小计：
+				<span>0元</span>
+			</li>
+			<li>
+				<input type="button" value="-" />
+				<strong>0</strong>
+				<input type="button" value="+" /> 单价： <em>13.5元</em> 小计：
+				<span>0元</span>
+			</li>
+			<li>
+				<input type="button" value="-" />
+				<strong>0</strong>
+				<input type="button" value="+" /> 单价： <em>10.5元</em> 小计：
+				<span>0元</span>
+			</li>
+			<li>
+				<input type="button" value="-" />
+				<strong>0</strong>
+				<input type="button" value="+" /> 单价： <em>4.5元</em> 小计：
+				<span>0元</span>
+			</li>
+		</ul>
+		<!--<p>
+商品合计共：0件，共花费了：0元<br />
+其中最贵的商品单价是：0元
+</p>-->
+      	 商品合计： <em id="em">0件</em>
+	</body>
+
+</html>
+<script>
+	window.onload = function() {
+		var oUl = document.getElementById('List');
+		var aLi = oUl.getElementsByTagName('li');
+		var emm=document.getElementById('em');
+
+		for(var i=0;i<aLi.length;i++)
+		{
+			fn1(aLi[i]);
+		}
+
+     function fn1 ( li ) {
+		var aBtn = li.getElementsByTagName ('input');
+		var oStrong = li.getElementsByTagName ('strong')[0];
+		var oEm = li.getElementsByTagName ('em')[0];
+		var oSpan = li.getElementsByTagName ('span')[0];
+		var n = oStrong.innerHTML;			// '0'
+		var price = parseFloat(oEm.innerHTML);			// 12.5
+		
+		aBtn[0].onclick = function () {
+			if ( n > 0 ) {
+				n--;
+			}
+			oStrong.innerHTML = n;
+			oSpan.innerHTML = n*price + '元';
+			
+		};
+		aBtn[1].onclick = function () {
+			n++;
+			oStrong.innerHTML = n;
+			oSpan.innerHTML = n*price + '元';
+		};
+		
+	}
+	};
+</script>

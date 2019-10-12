@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function(){
+				var abtn=document.getElementsByTagName('input');
+				var aP=document.getElementsByTagName('p');
+				var arr=['林卫星','吴凯','陈智霖'];
+				
+				for(var i=0;i<abtn.length;i++)
+				{
+					abtn[i].index=i;
+					abtn[i].onclick=function(){
+						this.value=arr[this.index];
+						aP[this.index].innerHTML=arr[this.index];
+						this.index++;
+						if(this.index==arr.length)
+						{
+							this.index=0;
+						}
+					};
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<input type="button" value="瓜皮" />
+		<input type="button" value="瓜皮" />
+		<input type="button" value="瓜皮" />
+		<p></p>
+		<p></p>
+		<p></p>
+	</body>
+</html>

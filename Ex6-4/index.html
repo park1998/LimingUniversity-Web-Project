@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#div1 {
+				width: 313px;
+				height: 645px;
+				margin: 100px auto;
+				overflow: none;
+				position: relative;
+			}
+			
+			#div2 {
+				width: 255px;
+				height: 414px;
+				position: absolute;
+				overflow: auto;
+				top: 94px;
+				left: 29px;
+			}
+			
+			.div1_bottom {
+				width: 256px;
+				height: 40px;
+				position: absolute;
+				top: 510px;
+				left: 28px;
+				border: solid 1px;
+			}
+			
+			#tx {
+				width: 30px;
+				height: 30px;
+				margin: 4px 2px;
+				float: left;
+			}
+			
+			.tx {
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin-left: 3px;
+			}
+			
+			.tx2 {
+				width: 20px;
+				height: 20px;
+				float: right;
+				margin-right: 3px;
+			}
+			
+			#Text {
+				width: 155px;
+				height: 30px;
+				border: 1px solid;
+				float: left;
+				margin: 4px;
+			}
+			
+			#p1 {
+				font-size: 25px;
+				margin: 4px;
+				color: #F0F0F0;
+			}
+			
+			#p1 a {
+				color: black;
+				text-decoration: none;
+			}
+			
+			#p1 a:hover {
+				opacity: 0.7;
+			}
+			
+			.left {
+				float: left;
+			}
+			
+			.right {
+				float: right;
+			}
+			
+			.le {
+				width: 230px;
+				margin: 5px 0;
+				float: left;
+			}
+			
+			.ri {
+				width: 230px;
+				margin: 5px 0;
+				float: right;
+			}
+			
+			.p1 {
+				font-size: 15px;
+				background: #F0F0F0;
+				margin-left: 28px;
+				margin-top: -21px;
+				padding: 4px;
+				border-radius: 0px;
+				float: left;
+				clear: both;
+			}
+			
+			.p2 {
+				font-size: 15px;
+				background: #b2e281;
+				margin-right: 28px;
+				margin-top: -21px;
+				padding: 4px;
+				border-radius: 0px;
+				float: right;
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div1">
+			<img class="back" src="img/Iphone5S.jpg" height="700px" width="310px" alt="Iphone" />
+			<div id="div2"></div>
+			<div class="div1_bottom">
+				<img id="tx" src="img/聊天2.jpg" alt="头像" />
+				<input type="text" id="Text" />
+				<p id="p1">
+					<a href="#">发送</a>
+				</p>
+	    </div>
+			<script>
+				window.onload = function() {
+					var oImg = document.getElementById('tx');
+					var oText = document.getElementById('Text');
+					var oP = document.getElementById('p1');
+					var oDiv = document.getElementById('div2');
+
+					var onOff = true;
+					oImg.onclick = function() {
+						if(onOff) {
+							oImg.src = 'img/聊天1.jpg';
+							onOff = false;
+						} else {
+							oImg.src = 'img/聊天2.jpg';
+							onOff = true;
+						}
+
+					}
+
+					oP.onclick = function() {
+						if(oText.value==''){
+							alert('哥们写点啥吧！？');
+						}
+						else if(onOff) { 
+							oDiv.innerHTML = '<br />' + '<div class="le"><img src="img/聊天2.jpg" class="tx" /><div class="p1">' + oText.value + '</div></div>' + oDiv.innerHTML; 
+							oText.value = "";
+						} else {
+							oDiv.innerHTML = '<br />' + '<div class="ri"><img src="img/聊天1.jpg" class="tx2" alt="头像" /><div class="p2">' + oText.value + '</div></div>' + oDiv.innerHTML;
+							oText.value = "";
+						}
+
+					}
+				}
+			</script>
+		</div>
+	</body>
+
+</html>

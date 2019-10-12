@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			function show()
+//			{
+//				alert('a');
+//			}
+			//setInterval(show,1000);   //隔一秒跳一次
+			//setTimeout(show,2000);    //两秒后跳一次
+			window.onload=function(){
+				var obtn1=document.getElementById('btn1');
+				var obtn2=document.getElementById('btn2');
+				var timer=null;
+				obtn1.onclick=function(){
+					timer=setInterval(function(){
+						alert('a')
+					},1000)
+				}
+				obtn2.onclick=function(){
+					clearInterval(timer);
+				}
+			}
+            
+		</script> 
+	</head>
+	<body>
+		<input id="btn1" type="button" value="开启" />
+		<input id="btn2" type="button" value="关闭" />
+	</body>
+</html>

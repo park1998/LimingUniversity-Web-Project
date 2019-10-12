@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.red{
+				width: 200px;
+				height: 300px;
+				background: red;
+				color: yellow;
+				padding: 20px;
+				overflow: auto;
+			}
+			.yellow{
+				width: 200px;
+				height: 300px;
+				background: yellow;
+				color: red;
+				padding: 20px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="+" />
+		<input id="btn2" type="button" value="-" />
+		<input id="btnred" type="button" value="红" />
+		<input id="btnyellow" type="button" value="黄" />
+		<p id="P1">但我心中春暖花小城的天气，总是变化莫测。上午还是艳阳高照，下午便乌云密布，哗啦啦下起了雨。我伫立在校门口，盼望雨能小一点，我没有带伞，爸妈又不在家，怎么回家呢？“我们一起走吧！”过头，却是一张陌生的面孔，我小心问道：“我们认识吗？”“我们在一个补习班。</p>
+	    <script>
+	    	var Obtn1=document.getElementById('btn1');
+	    	var Obtn2=document.getElementById('btn2');
+	    	var Obtnred=document.getElementById('btnred');
+	    	var Obtnyellow=document.getElementById('btnyellow');
+	    	var OP1=document.getElementById('P1');
+	    	var num=15;
+	    	
+	    	Obtn1.onclick=function(){
+	    	if(num<20){
+	    		num++;
+	    		OP1.style.fontSize=num+'px';
+	    		alert(num);
+	    	}
+	    	};
+	    	Obtn2.onclick=function(){
+	    		num--;
+	    		OP1.style.fontSize=num+'px';
+	    	};
+	    	Obtnred.onclick=function(){
+	    		OP1.className='red';
+	    	};
+	    	Obtnyellow.onclick=function(){
+	    		OP1.className='yellow';
+	    	};
+	    </script>
+	</body>
+</html>

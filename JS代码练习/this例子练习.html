@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this实例练习</title>
+		<style>
+			ul{
+				margin-top:100px ;
+			}
+		    li{
+		    	width: 100px;
+		    	height: 100px;
+		    	float: left;
+		    	background: darkgoldenrod;
+		    	margin-left: 30px;
+		    	list-style: none;
+		    }
+		    div{
+		    	width: 50px;
+		    	height: 50px;
+		    	background: yellowgreen;
+		    	margin:auto;
+		    	margin-top: 20px;
+		    	margin-bottom: auto;
+		    	display: none;
+		    }
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+		</ul>
+		
+		<script>
+			window.onload=function(){
+				var aLi=document.getElementsByTagName('li');
+				
+				for(i=0;i<aLi.length;i++)
+				{
+					aLi[i].onmouseover=function(){
+						this.getElementsByTagName('div')[0].style.display='block';
+					};
+					aLi[i].onmouseout=function(){
+						this.getElementsByTagName('div')[0].style.display='none';
+					};
+				}
+			};
+		</script>
+	</body>
+</html>

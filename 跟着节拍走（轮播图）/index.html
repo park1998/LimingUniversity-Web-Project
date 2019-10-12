@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>这是第七周课堂演示</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<script>
+			var photos = ['images/show.png', 'images/service2.png', 'images/service3.png', 'images/preferential1.png'];
+			var photos2 = ['images/preferential1.png', 'images/preferential2.png', 'images/preferential3.png','images/preferential1.png'];
+			var count = 0; //记录图片张数
+			var count2=0;
+			function callback() //实现图片切换
+			{
+				document.getElementById("photo").src = photos[count];
+				count++;
+				if(count == photos.length)
+					count = 0;
+			}
+			function callback2() //实现图片切换
+			{
+				document.getElementById("photo2").src = photos[count2];
+				count2++;
+				if(count2 == photos2.length)
+					count2 = 0;
+			}
+
+			function rightMove() //实现右滑动
+			{
+				document.getElementById("photo").src = photos[count];
+				count++;
+				if(count == photos.length)
+					count = 0;
+			}
+
+			function leftMove() //实现左滑动
+			{
+				count--;
+				document.getElementById("photo").src = photos[count];
+				if(count <= 0)
+					count = photos.length ;
+			}
+			
+			function rightMove1() //实现右滑动
+			{
+				document.getElementById("photo2").src = photos2[count2];
+				count2++;
+				if(count2 == photos.length)
+					count2 = 0;
+			}
+
+			function leftMove1() //实现左滑动
+			{
+				count2--;
+				document.getElementById("photo2").src = photos2[count2];
+				if(count2 <= 0)
+					count2 += photos.length ;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<header class="layout">
+				<a href="http://www.fhyhotel.com"> <img class="logo" src="images/logo.png">
+					<h1>枫和源酒店</h1>
+				</a>
+				<address class="service-tel">服务电话：<a href="tel:0592-8888888">0592-8888888</a></address>
+				<nav>
+					<a href="#" id="first">首页</a>
+					<a href="#">酒店介绍</a>
+					<a href="#">客房服务</a>
+					<a href="#">客房预订</a>
+					<a href="#">酒店动态</a>
+					<a href="#">旅游接待</a>
+					<a href="#">招聘信息</a>
+					<a href="#">厦门旅游</a>
+					<a href="#">联系我们</a>
+				</nav>
+			</header>
+			<img class="banner" src="images/banner1.png">
+			<main>
+				<div class="cf layout">
+					<article>
+						<h2>酒店简介</h2>
+						<p class="intro">枫和源国际酒店集团(HI)，为总部设于枫和源集团公司旗下分支，拥有除美国外全球范围内“枫和源”商标的使用权。枫和源国际酒店集团经营管理着403间酒店，包括261间枫和源酒店，142间面向中端市场的“斯堪的克”酒店，以及与总部设在北美的枫和源酒店管理公司合资经营的、分布在12个国家中的18间“康拉德”（亦称“港丽”）酒店。它与枫和源酒店管理公司组合的全球营销联盟，令世界范围内双方旗下酒店总数超过了2700间，其中500多间酒店共同使用枫和源的品牌。枫和源国际酒店集团在全球80个国家内有着逾71000名雇员。枫和源经营旅馆业的座右铭是：“你今天对客人微笑了吗？”这也是他所著的《宾至如归》一书的核心内容。</p>
+						<em class="star">星级酒店</em>
+						<em class="boutique">精品酒店</em>
+						<em class="chinese-western">中西合璧</em>
+					</article>
+					<div class="list-des">
+						<ul>
+							<li class="">
+								<a href="#"><img id="photo" onmouseover="off()" onmouseout="on()" class="show" src="images/show.png"></a>
+							</li>
+							<!--<li class="hidden">
+								<a href="#"><img id="photo" onmouseover="off()" onmouseout="on()" class="show" src="images/service2.png"></a>
+							</li>
+							<li class="hidden">
+								<a href="#"><img id="photo" onmouseover="off()" onmouseout="on()" class="show" src="images/service3.png"></a>
+							</li>
+							<li class="hidden">
+								<a href="#"><img id="photo" onmouseover="off()" onmouseout="on()" class="show" src="images/preferential1.png"></a>
+							</li>-->
+						</ul>
+						<a class="pre"><img id="leftimg" onclick="leftMove()" src="images/pre.png"></a>
+						<a class="next"><img id="rightimg" onclick="rightMove()" src="images/next.png"></a>
+					</div>
+				</div>
+				<div class="cf preferential">
+					<dl class="cf layout">
+						<dt>最新优惠</dt>
+						<dd>
+							<a href="#">
+								<img id="photo2" onmouseover="off()" onmouseout="on()" src="images/preferential1.png">
+								<span>超大单间特价</span>
+								<b><strong>318元</strong>起</b>
+								<span class="mask"></span>
+							</a>
+						</dd>
+						<dd>
+							<a href="#">
+								<img id="photo2" onmouseover="off()" onmouseout="on()" src="images/preferential2.png">
+								<span>超大套房特价</span>
+								<b><strong>318元</strong>起</b>
+								<span class="mask"></span>
+							</a>
+						</dd>
+						<dd>
+							<a href="#">
+								<img id="photo2" onmouseover="off()" onmouseout="on()" src="images/preferential3.png">
+								<span>办公会议特价</span>
+								<b><strong>318元</strong>起</b>
+								<span class="mask"></span>
+							</a>
+						</dd>
+						<dd style="display: none;">
+							<a href="#"> <img src="images/preferential1.png">
+								<span></span>
+								<b><strong></strong></b>
+								<span class="mask"></span>
+							</a>
+						</dd>
+					</dl>
+					<div class="cf arrow layout">
+						<a  class="p-pre"><img id="leftimg2" onclick="leftMove1()" src="images/pre.png" /> </a>
+						<a  class="p-next"><img id="rightimg2" onclick="rightMove1()" src="images/next.png" /> </a>
+					</div>
+				</div>
+
+				<dl class="cf layout services">
+					<dt>特色服务</dt>
+					<dd class="first"><img class="circular" src="images/service1.png"><span>免费早餐</span></dd>
+					<dd><img class="circular" src="images/service2.png"><span>会议接待</span></dd>
+					<dd><img class="circular" src="images/service3.png"><span>旅游接待</span></dd>
+					<dd><img class="circular" src="images/service4.png"><span>免费停车</span></dd>
+				</dl>
+
+				<div class="reservation">
+					<div class="layout">
+						<a class="reservation-button" href="#"><span>立即预定</span></a>
+						<p>24小时服务（节假日不休）</p>
+						<a class="reservation-tel" href="tel:0592-8888888">订房热线：0592-8888888</a>
+					</div>
+				</div>
+			</main>
+
+			<img class="banner" src="images/banner2.gif">
+
+			<footer>
+				<div class="layout foot">
+					<div class="contact">
+						<p>枫和源四星级酒店</p>
+						<p>地址：厦门经济特区厦禾路xxxx号</p>
+						<p>服务热线：0592-8888888</p>
+					</div>
+					<img class="logo-bottom" src="images/logo-bottom.png">
+					<div class="justify-right">
+						<nav>
+							<a href="/templets/aaa/#">网站首页</a>
+							<a>|</a>
+							<a href="/templets/aaa/#">酒店介绍</a>
+							<a>|</a>
+							<a href="/templets/aaa/#">客房服务</a>
+							<a>|</a>
+							<a href="/templets/aaa/#">客房预订</a>
+						</nav>
+						<p>© 2014 枫和源酒店集团版权所有</p>
+						<p>京ICP备13023281号</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=1200" />
+		<title>水木年华家教</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/code.css">
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+
+		<script src="js/jQuery.rTabs.js"></script>
+		<script src="js/search_tab.js"></script>
+
+		<link href="js/artDialog/skins/brief.css" rel="stylesheet" />
+		<script src="js/artDialog/jquery.artDialog.min.js"></script>
+		<!--[if IE 6]>
+    <script type="text/javascript">
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+		<!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+
+		<script>
+			artDialog.alert = function(content, callback) {
+				return artDialog({
+					id: 'Alert',
+					icon: 'warning',
+					fixed: true,
+					// lock: true,
+					width: 250,
+					height: 50,
+					content: content,
+					ok: true,
+					close: callback
+				})
+			};
+
+			artDialog.tips = function(content, time) {
+				return artDialog({
+						id: 'Tips',
+						title: false,
+						cancel: false,
+						fixed: true,
+						// lock: true,
+						width: 250,
+						height: 50
+					})
+					.content('<div style="padding: 0 1em;">' + content + '</div>')
+					.time(time || 1);
+			};
+		</script>
+
+	</head>
+
+	<body>
+		<input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/account/login?returnUrl=http://qz.ygjj.com/Teacher/Index" />
+		<div class="header min_1200">
+			<div class="w_1200">
+				<h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+				<h3 class="h_city fl">
+        </h3>
+
+				<!--star搜索-->
+				<div class="pub-search">
+					<form class="search-form" method="GET" action="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">
+						<div class="search-box">
+							<ul class="transition_a">
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="学员搜索" target="http://qz.ygjj.com/xy_a0_s0_d0_x0_t0_o0_g1">学员</li>
+							</ul>
+							<input placeholder="搜教员\搜学员" type="text" name="keyword" value="" />
+							<input type="button" class="search_btn" value="搜索">
+						</div>
+					</form>
+				</div>
+				<!--end搜索-->
+				<div class="header_r fr">
+					<span class="font_16">客服微信：</span>
+					<img src="images/kefu.png" class="wechat_img" alt="水木年华家教客服微信" width="80" height="80">
+
+					<span class="font_13">
+                                    <b class="orange_link">
+                        <a href="/account/logout" class="heada">退出</a>
+                    </b><em class="china"></em>
+                    <a href="/Teacher/Index" class="heada">我的</a>
+                                            </span>
+				</div>
+				<!--end头文件右-->
+			</div>
+		</div>
+		<!--end头文件-->
+
+		<!--end头文件-->
+
+		<div class="nav min_1200">
+			<div class="tnav w_1200" id="slideNav">
+				<span><a href="/home" class="current_nav">泉州家教</a></span>
+				<span><a href="/home/cost">家教价格</a></span>
+				<span><a href="/Teachers.aspx">家教老师库</a></span>
+				<span><a href="/Orders.aspx">学员库</a></span>
+				<i class="tavline" id="slideNavLine"></i>
+			</div>
+		</div>
+
+		<div class="tearch_banner min_1200">
+			<div class="w_1200">
+				<dl class="tearch_banner_dl png_img">
+					<dd class="f_l">
+					</dd>
+					<dd class="f_r">
+						<ul class="list_ul gray_link gray_text">
+							<li>
+								<span class="font_34 eng">
+                                0
+                            </span>
+								<p>
+									可用查看学员次数
+								</p>
+							</li>
+							<li>
+								<span class="font_34 eng">
+                                1
+                            </span>
+								<p>
+									可用预约次数
+								</p>
+							</li>
+						</ul>
+					</dd>
+					<dt>
+                    <a href="/teacher/album">
+                        <div class="pic_140 round_img img_shadow">
+                            <img src="images/1111.png" alt="" width="140" height="140">
+                        </div>
+                        <h4>林教员</h4>
+                    </a>
+                    <div class="t">
+                        ID：5018961
+                        <span class="ml_20">
+简历有效                        </span>
+             
+                </dt>
+
+				</dl>
+			</div>
+		</div>
+		<!--end一行-->
+		<!--end一行-->
+		<!-- end nav -->
+		<div class="w_1200 d_center white_bj">
+
+			<div class="fl w_300 box_line">
+				<dl class="tearch_l_nav">
+					<dt><span>快捷操作</span></dt>
+					<dd>
+						<div class="t clearfix">
+							<h5>简历更新</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/resume">修改简历</a>
+								</li>
+								<li>
+									<a href="/teacher/password">密码/权限</a>
+								</li>
+								<li>
+									<a href="/teacher/certificate">证件上传</a>
+								</li>
+								<li>
+									<a href="/teacher/album">我的相册</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>家教情况</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/success">成功记录</a>
+								</li>
+								<li>
+									<a href="/teacher/myview">查看记录</a>
+								</li>
+								<li>
+									<a href="/teacher/appoint">预约记录</a>
+								</li>
+								<li>
+									<a href="/teacher/judge">学员评价</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>充值</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/pay">购买会员</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--end一行的左-->
+
+			<!--end一行的左-->
+			<div class="r_cell box_r">
+				<h4 class="r_th_y"><b>个人中心首页</b></h4>
+
+				<dl class="tearch_1 clearfix">
+					<dt class="fr">
+
+				<div class="clearfix tearch_step">
+					<h4 class="r_th_y"><b>快速接到家教的技巧</b></h4>
+					<ul class="clearfix tearch_step_ul">
+						<li><span class="round_r tearch_arrow png"></span>
+							<p>完善的简历</p>
+						</li>
+						<li class="gt"></li>
+						<li><span class="round_r tearch_arrow tearch_arrow2 png"></span>
+							<p>会员身份</p>
+						</li>
+						<li class="gt"></li>
+						<li><span class="round_r tearch_arrow tearch_arrow3 png"></span>
+							<p>主动联系学员</p>
+						</li>
+					</ul>
+				</div>
+				<!--快速接到家教的技巧-->
+
+			</div>
+			<input id="Report" name="Report" type="hidden" value="{&quot;legends&quot;:[&quot;2018-12-03&quot;,&quot;2018-12-04&quot;,&quot;2018-12-05&quot;,&quot;2018-12-06&quot;,&quot;2018-12-07&quot;,&quot;2018-12-08&quot;,&quot;2018-12-09&quot;],&quot;appoint&quot;:[0,0,0,0,0,0,0],&quot;appointed&quot;:[0,0,0,0,0,0,0],&quot;view&quot;:[0,0,0,0,0,0,0],&quot;viewed&quot;:[0,0,0,0,0,0,0],&quot;success&quot;:[0,0,0,0,0,0,0]}" />
+			<!--end一行的右-->
+			<script src="/js/echart/echarts.min.js"></script>
+
+			<script>
+				$(function() {
+					var symbolSize = 20;
+					var points = [];
+					var data = $.parseJSON($("#Report").val());
+					var option = {
+						title: {
+							text: '近期家教趋势',
+							subtext: '水木年华家教平台'
+						},
+						tooltip: {
+							trigger: 'axis'
+						},
+						legend: {
+							data: ['被学员查看', '查看学员', '被学员预约', '预约学员', '成功授课']
+						},
+						toolbox: {
+							show: true,
+							feature: {
+								dataZoom: {
+									yAxisIndex: 'none'
+								},
+								dataView: {
+									readOnly: false
+								},
+								magicType: {
+									type: ['line', 'bar']
+								},
+								restore: {},
+								saveAsImage: {}
+							}
+						},
+						xAxis: {
+							type: 'category',
+							boundaryGap: false,
+							data: data.legends
+						},
+						yAxis: {
+							type: 'value',
+							axisLabel: {
+								formatter: '{value}'
+							},
+							minInterval: 1
+						},
+						series: [{
+								name: '被学员查看',
+								type: 'line',
+								data: data.viewed,
+								smooth: true, //这句就是让曲线变平滑的
+								markPoint: {
+									data: [{
+											type: 'max',
+											name: '最大值'
+										},
+										{
+											type: 'min',
+											name: '最小值'
+										}
+									]
+								},
+								markLine: {
+									data: [{
+										type: 'average',
+										name: '平均值'
+									}]
+								}
+							},
+							{
+								name: '查看学员',
+								type: 'line',
+								data: data.view,
+								smooth: true, //这句就是让曲线变平滑的
+								markPoint: {
+									data: [{
+										name: '周最低',
+										value: -2,
+										xAxis: 1,
+										yAxis: -1.5
+									}]
+								},
+								markLine: {
+									data: [{
+											type: 'average',
+											name: '平均值'
+										},
+										[{
+											symbol: 'none',
+											x: '90%',
+											yAxis: 'max'
+										}, {
+											symbol: 'circle',
+											label: {
+												normal: {
+													position: 'start',
+													formatter: '最大值'
+												}
+											},
+											type: 'max',
+											name: '最高点'
+										}]
+									]
+								}
+							}, {
+								name: '被学员预约',
+								type: 'line',
+								data: data.appointed,
+								smooth: true, //这句就是让曲线变平滑的
+								markPoint: {
+									data: [{
+											type: 'max',
+											name: '最大值'
+										},
+										{
+											type: 'min',
+											name: '最小值'
+										}
+									]
+								},
+								markLine: {
+									data: [{
+										type: 'average',
+										name: '平均值'
+									}]
+								}
+							},
+							{
+								name: '预约学员',
+								type: 'line',
+								data: data.appoint,
+								smooth: true, //这句就是让曲线变平滑的
+								markPoint: {
+									data: [{
+											type: 'max',
+											name: '最大值'
+										},
+										{
+											type: 'min',
+											name: '最小值'
+										}
+									]
+								},
+								markLine: {
+									data: [{
+										type: 'average',
+										name: '平均值'
+									}]
+								}
+							},
+							{
+								name: '成功授课',
+								type: 'line',
+								smooth: true, //这句就是让曲线变平滑的
+								data: data.success,
+								markPoint: {
+									data: [{
+											type: 'max',
+											name: '最大值'
+										},
+										{
+											type: 'min',
+											name: '最小值'
+										}
+									]
+								},
+								markLine: {
+									data: [{
+										type: 'average',
+										name: '平均值'
+									}]
+								}
+							},
+						]
+					};
+
+					var myChart = echarts.init(document.getElementById('chartView'));
+					myChart.setOption(option)
+				});
+			</script>
+			<!--end一行的右-->
+		</div>
+		<!--end一行-->
+
+		<div class="clearfix d_link min_1200">
+			<div class="clearfix w_1200 d_link">
+				<div class="d_link_t clearfix">
+					<div class="d_link_tel fl">
+						<h4>服务热线</h4>
+						<p>(工作日9:00~18:00)</p>
+						<div class="d orange_text big_num font_34">400-000-0000</div>
+					</div>
+					<div class="r_cell">
+						<ul class="d_link_ul list_4 fl">
+							<li>
+								<h4>会员指南</h4>
+								<p>
+									<a href="/help/iam2" rel="nofollow">我是教员</a>
+								</p>
+								<p>
+									<a href="/help/iam1" rel="nofollow">我是学员</a>
+								</p>
+								<p>
+									<a href="/help/iam3" rel="nofollow">我是辅导班</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>网站导航</h4>
+								<p>
+									<a href="/home/subject" rel="nofollow">课程科目</a>
+								</p>
+								<p>
+									<a href="/help" rel="nofollow">帮助中心</a>
+								</p>
+								<p>
+									<a href="http://www.ygjj.com" rel="nofollow">服务城市</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>简介</h4>
+								<p>
+									<a href="/help/aboutus" rel="nofollow">关于我们</a>
+								</p>
+								<p>
+									<a href="/help/service" rel="nofollow">服务声明</a>
+								</p>
+								<p>
+									<a href="/help/Pivacy" rel="nofollow">隐私保护</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>合作</h4>
+								<p>
+									<a href="/help/friendlink" rel="nofollow">友情链接</a>
+								</p>
+							</li>
+						</ul>
+						<div class="r_cell d_link_wechat">
+							<h4>关注微信</h4>
+							<p><img src="images/kefu.png
+								" alt="" width="120" height="120"></p>
+						</div>
+					</div>
+				</div>
+				<!--end一行-->
+			</div>
+		</div>
+		<!--end链接-->
+
+	</body>
+
+</html>

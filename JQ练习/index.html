@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<ul>
+		    <li>123</li>
+		    <li>456</li>
+		    <li>789</li>
+		</ul>
+		<div title="123">div1</div>
+	</body>
+</html>
+<script>
+$(function(){
+//	   alert($('li').html());
+      $('li').html('hello');
+      $('div').attr('title','456');
+//      $('div').attr('class','box');
+});
+</script>

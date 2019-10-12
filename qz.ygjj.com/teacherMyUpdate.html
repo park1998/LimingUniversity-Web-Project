@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=1200" />
+		<title>水木年华家教</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/code.css">
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+
+		<script src="js/jQuery.rTabs.js"></script>
+		<script src="js/search_tab.js"></script>
+
+		<link href="js/artDialog/skins/brief.css" rel="stylesheet" />
+		<script src="js/artDialog/jquery.artDialog.min.js"></script>
+		<!--[if IE 6]>
+    <script type="text/javascript">
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+		<!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+
+		<script>
+			artDialog.alert = function(content, callback) {
+				return artDialog({
+					id: 'Alert',
+					icon: 'warning',
+					fixed: true,
+					// lock: true,
+					width: 250,
+					height: 50,
+					content: content,
+					ok: true,
+					close: callback
+				})
+			};
+
+			artDialog.tips = function(content, time) {
+				return artDialog({
+						id: 'Tips',
+						title: false,
+						cancel: false,
+						fixed: true,
+						// lock: true,
+						width: 250,
+						height: 50
+					})
+					.content('<div style="padding: 0 1em;">' + content + '</div>')
+					.time(time || 1);
+			};
+		</script>
+
+	</head>
+
+	<body>
+		<input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/account/login?returnUrl=http://qz.ygjj.com/teacher/resume" />
+		<div class="header min_1200">
+			<div class="w_1200">
+				<h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+				<h3 class="h_city fl">
+        </h3>
+
+				<!--star搜索-->
+				<div class="pub-search">
+					<form class="search-form" method="GET" action="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">
+						<div class="search-box">
+							<ul class="transition_a">
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="学员搜索" target="http://qz.ygjj.com/xy_a0_s0_d0_x0_t0_o0_g1">学员</li>
+							</ul>
+							<input placeholder="搜教员\搜学员" type="text" name="keyword" value="" />
+							<input type="button" class="search_btn" value="搜索">
+						</div>
+					</form>
+				</div>
+				<!--end搜索-->
+				<div class="header_r fr">
+					<span class="font_16">客服微信：</span>
+					<img src="images/kefu.png" class="wechat_img" alt="水木年华家教客服微信" width="80" height="80">
+
+					<span class="font_13">
+                                    <b class="orange_link">
+                        <a href="/account/logout" class="heada">退出</a>
+                    </b><em class="china"></em>
+                    <a href="/Teacher/Index" class="heada">我的</a>
+                                            </span>
+				</div>
+				<!--end头文件右-->
+			</div>
+		</div>
+		<!--end头文件-->
+
+		<!--end头文件-->
+
+		<div class="nav min_1200">
+			<div class="tnav w_1200" id="slideNav">
+				<span><a href="/home" class="current_nav">泉州家教</a></span>
+				<span><a href="/home/cost">家教价格</a></span>
+				<span><a href="/Teachers.aspx">家教老师库</a></span>
+				<span><a href="/Orders.aspx">学员库</a></span>
+				<i class="tavline" id="slideNavLine"></i>
+			</div>
+		</div>
+
+		<div class="tearch_banner min_1200">
+			<div class="w_1200">
+				<dl class="tearch_banner_dl png_img">
+
+					<dd class="f_r">
+						<ul class="list_ul gray_link gray_text">
+							<li>
+								<span class="font_34 eng">
+                                0
+                            </span>
+								<p>
+									可用查看学员次数
+								</p>
+							</li>
+							<li>
+								<span class="font_34 eng">
+                                1
+                            </span>
+								<p>
+									可用预约次数
+								</p>
+							</li>
+						</ul>
+					</dd>
+					<dt>
+                    <a href="/teacher/album">
+                        <div class="pic_140 round_img img_shadow">
+                            <img src="images/1111.png" alt="" width="140" height="140">
+                        </div>
+                        <h4>林教员</h4>
+                    </a>
+                    <div class="t">
+                        ID：5018961
+                        <span class="ml_20">
+简历有效                        </span>
+               
+
+				</dl>
+			</div>
+		</div>
+		<!--end一行-->
+		<!--end一行-->
+		<!-- end nav -->
+		<div class="w_1200 d_center white_bj">
+
+			<div class="fl w_300 box_line">
+				<dl class="tearch_l_nav">
+					<dt><span>快捷操作</span></dt>
+					<dd>
+						<div class="t clearfix">
+							<h5>简历更新</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/resume">修改简历</a>
+								</li>
+								<li>
+									<a href="/teacher/password">密码/权限</a>
+								</li>
+								<li>
+									<a href="/teacher/certificate">证件上传</a>
+								</li>
+								<li>
+									<a href="/teacher/album">我的相册</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>家教情况</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/success">成功记录</a>
+								</li>
+								<li>
+									<a href="/teacher/myview">查看记录</a>
+								</li>
+								<li>
+									<a href="/teacher/appoint">预约记录</a>
+								</li>
+								<li>
+									<a href="/teacher/judge">学员评价</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>充值</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/pay">购买会员</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--end一行的左-->
+
+			<!--end一行的左-->
+			<div class="r_cell box_r">
+				<h4 class="r_th_y"><b>修改简历</b></h4>
+
+				<div class="div_line clearfix font_15" style="padding-top:0;">
+					<ul class="clearfix list_text_ul list_2">
+						<li>姓名：林教员</li>
+						<li>出生日期：1998.11</li>
+						<li>最高学历：大专在读</li>
+						<li>就读专业：软件技术</li>
+						<li>性别：女</li>
+						<li>来自省份/国家：福建</li>
+						<li>现有身份：在校大三学生</li>
+						<li>就读学校：黎明职业大学</li>
+						<li>高中母校：莆田八中</li>
+						<li style="width: 200px;">联系电话：13030980652</li>
+						<span class=""><a href="/teacher/resumeeditmobile" class="round_m ext_btn_a">编辑</a></span>
+					</ul>
+				</div>
+				<div class="div_line clearfix font_15">
+					<h4 class="th_line_d"><span class="fr"><a href="/teacher/resumep1" class="round_m ext_btn_a">编辑</a></span>基本信息</h4>
+					<ul class="clearfix list_text_ul list_2 blue_link link_line">
+						<li>微信号：lyf</li>
+						<li>住址区域：丰泽区</li>
+						<li>英语水平：二级</li>
+						<li>其他特长：</li>
+						<li>其他外语：</li>
+						<li>教龄：0 年</li>
+						<li>大概住址：泉州市丰泽区黎明大学</li>
+					</ul>
+				</div>
+				<!--end右一行-->
+				<div class="div_line clearfix font_15">
+					<h4 class="th_line_d"><span class="fr"><a href="/teacher/resumep2" class="round_m ext_btn_a">编辑</a></span>教育信息</h4>
+					<ul class="clearfix list_text_ul blue_link">
+						<li class="clearfix">
+							<span class="fl">授课区域：</span>
+							<div class="r_cell a_margin">
+								<a href="javascript:void(0)">丰泽区</a>
+							</div>
+						</li>
+
+						<li class="clearfix">
+							<span class="fl">授课科目：</span>
+							<div class="r_cell a_margin">
+								<a href="javascript:void(0)">一年级数学</a>
+								<a href="javascript:void(0)">一年级英语</a>
+								<a href="javascript:void(0)">一年级语文</a>
+							</div>
+						</li>
+
+						<li class="clearfix">
+							<span class="fl">上课方式：</span>
+							<div class="r_cell a_margin">
+								<a href="javascript:void(0)">初学员上门</a>
+								<a href="javascript:void(0)">网络授课</a>
+								<a href="javascript:void(0)">协商</a>
+
+							</div>
+						</li>
+
+						<li class="clearfix">
+							<span class="fl">免费试讲：</span>
+							<div class="r_cell">支持</div>
+						</li>
+						<li class="clearfix">
+							<span class="fl">薪酬要求：</span>
+							<div class="r_cell">面议</div>
+						</li>
+						<li class="clearfix">
+							<span class="fl">授课时间：</span>
+							<div class="r_cell">
+
+								<table class="time_table png_img" style="width:675px;">
+									<thead>
+										<tr>
+											<th></th>
+											<th>周一</th>
+											<th>周二</th>
+											<th>周三</th>
+											<th>周四</th>
+											<th>周五</th>
+											<th>周六</th>
+											<th>周日</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>上午</th>
+											<td data-id="1">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="4">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="7">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="10">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="13">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="16">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+											<td data-id="19">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+										</tr>
+										<tr>
+											<th>下午</th>
+											<td data-id="2">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="5">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="8">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="11">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="14">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="17">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+											<td data-id="20">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+										</tr>
+										<tr>
+											<th>晚上</th>
+											<td data-id="3">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="6">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="9"><img src="/images/icon/error.png" alt=""></td>
+											<td data-id="12">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="15">
+												<a href="javascript:void(0)"><img src="/images/icon/error.png" alt=""></a>
+											</td>
+											<td data-id="18">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+											<td data-id="21">
+												<a href="javascript:void(0)"><img src="/images/icon/ok.png" alt=""></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<input id="TimeListId" name="TimeListId" type="hidden" value="16,19,17,20,18,21," />
+								<input id="TimeListName" name="TimeListName" type="hidden" value="" />
+
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--end右一行-->
+
+				<div class="div_line clearfix font_15">
+					<h4 class="th_line_d">
+        <span class="fr">
+            <a href="/teacher/resumep3" class="round_m ext_btn_a">编辑</a>
+        </span>其他信息
+    </h4>
+					<ul class="clearfix list_text_ul">
+
+						<li class="clearfix">
+							<span class="fl">自我介绍：</span>
+							<div class="r_cell">
+								<div class="text_sec">小学数学课代表</div>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+				<!--end右一行-->
+
+			</div>
+			<!--end一行的右-->
+			<!--end一行的右-->
+		</div>
+		<!--end一行-->
+
+		<div class="clearfix d_link min_1200">
+			<div class="clearfix w_1200 d_link">
+				<div class="d_link_t clearfix">
+					<div class="d_link_tel fl">
+						<h4>服务热线</h4>
+						<p>(工作日9:00~18:00)</p>
+						<div class="d orange_text big_num font_34">400-000-0000</div>
+					</div>
+					<div class="r_cell">
+						<ul class="d_link_ul list_4 fl">
+							<li>
+								<h4>会员指南</h4>
+								<p>
+									<a href="/help/iam2" rel="nofollow">我是教员</a>
+								</p>
+								<p>
+									<a href="/help/iam1" rel="nofollow">我是学员</a>
+								</p>
+								<p>
+									<a href="/help/iam3" rel="nofollow">我是辅导班</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>网站导航</h4>
+								<p>
+									<a href="/home/subject" rel="nofollow">课程科目</a>
+								</p>
+								<p>
+									<a href="/help" rel="nofollow">帮助中心</a>
+								</p>
+								<p>
+									<a href="http://www.ygjj.com" rel="nofollow">服务城市</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>简介</h4>
+								<p>
+									<a href="/help/aboutus" rel="nofollow">关于我们</a>
+								</p>
+								<p>
+									<a href="/help/service" rel="nofollow">服务声明</a>
+								</p>
+								<p>
+									<a href="/help/Pivacy" rel="nofollow">隐私保护</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>合作</h4>
+								<p>
+									<a href="/help/friendlink" rel="nofollow">友情链接</a>
+								</p>
+							</li>
+						</ul>
+						<div class="r_cell d_link_wechat">
+							<h4>关注微信</h4>
+							<p><img src="images/kefu.png" alt="" width="120" height="120"></p>
+						</div>
+					</div>
+				</div>
+				<!--end一行-->
+				
+				<!--end热门城市-->
+			</div>
+		</div>
+		<!--end链接-->
+
+		<!--返回顶部-->
+		<div class="ftool_top">
+			<a href="#" class="top_ftoolab transition_a" id="ftoolTop"></a>
+		</div>
+		<!--返回顶部-->
+
+		<!--[if IE 6]>
+    <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.png_img img,.png');
+    </script>
+    <![endif]-->
+
+	</body>
+
+</html>

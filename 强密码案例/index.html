@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.mm-body {
+				position: relative;
+				height: 100px;
+				width: 450px;
+				background-color: wheat;
+			}
+			
+			.mm-top {
+				height: 35px;
+				width: 450px;
+				background-color: wheat;
+			}
+			
+			.mm-sr {
+				height: 30px;
+				width: 100px;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			#mm-pwd {
+				float: left;
+				height: 25px;
+				background-color: ghostwhite;
+				border-radius: 5px;
+				width: 150px;
+			}
+			
+			.mm-btm {
+				height: 40px;
+				width: 140px;
+				position: relative;
+				margin-left: 110px;
+			}
+			
+			#lv1,
+			#lv2,
+			#lv3 {
+				height: 30px;
+				width: 40px;
+				border-top: 4px solid gainsboro;
+				margin-left: 3px;
+				float: left;
+				font-size: 18px;
+				text-align: center;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mm-body">
+			<div class="mm-top">
+				<span class="mm-sr">请输入密码:</span>
+				<form method="get" action="data.html">
+					<input type="password" id="mm-pwd" onkeyup="show()" />
+				</form>
+				<span id="mm-pd" style="color: red; font-size: 12px; line-height: 30px;"></span>
+			</div>
+			<div class="mm-btm">
+				<div id="lv1">弱</div>
+				<div id="lv2">中</div>
+				<div id="lv3">强</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script language="JavaScript">
+	window.onload=function() {
+		var a = document.getElementById("mm-pwd").value;
+
+		if(a.length == 0) {
+			document.getElementById("mm-pd").innerHTML = "密码不能为空！";
+		} 
+		else if(a.length < 6) {
+			document.getElementById("mm-pd").innerHTML = "密码长度小于6个字符!";
+		} 
+		else if(a.length >= 6 && a.length <= 16) {
+			document.getElementById("mm-pd").innerHTML = "";
+			var reg = /^[0-9]{6,16}$|^[a-zA-Z]{6,16}$/; //全是数字或全是字母 6-16个字符
+			var reg1 = /^[A-Za-z0-9]{6,16}$/; //数字、26个英文字母 6-16个字符
+			var reg2 = /^\w{6,16}$/; // 由数字、26个英文字母或者下划线组成的字符串 6-16个字符
+			if(a.match(reg)) {
+				document.getElementById("lv1").style.borderTopColor = "red";
+
+			} else if(a.match(reg1)) {
+				document.getElementById("lv1").style.borderTopColor = "red";
+				document.getElementById("lv2").style.borderTopColor = "yellow";
+			} else if(a.match(reg2)) {
+				document.getElementById("lv1").style.borderTopColor = "red";
+				document.getElementById("lv2").style.borderTopColor = "yellow";
+				document.getElementById("lv3").style.borderTopColor = "green";
+			}
+		} 
+		else if(a.length > 16) {
+			document.getElementById("mm-pd").innerHTML = "密码长度大于16个字符!";
+			document.getElementById("lv1").style.borderTopColor = "gainsboro";
+			document.getElementById("lv2").style.borderTopColor = "gainsboro";
+			document.getElementById("lv3").style.borderTopColor = "gainsboro";
+		}
+
+	}
+</script>

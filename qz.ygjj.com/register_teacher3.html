@@ -1,0 +1,592 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=1200" />
+    <title>水木年华家教_教员简历完善-1</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/code.css">
+    <!--[if IE 6]>
+    <script type="text/javascript">
+    document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/tool.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript">
+        ; $(function () {
+            //显示或隐藏
+            $('.hide_a').click(function () {
+                $(this).parent().parent().parent('.add_box').hide('slow');
+            });
+            $('.add_a').click(function () {
+                $(this).parent().siblings('.add_box').fadeIn();
+            });
+        });
+    </script>
+    
+    <script src="js/plugins/plupload/plupload.js"></script>
+    <script src="js/plugins/plupload/plupload.flash.js"></script>
+    <script src="/js/plugins/plupload/plupload.html5.js"></script>
+
+    <link href="/js/copper/cropper.css" rel="stylesheet" />
+    <script src="/js/copper/cropper.js"></script>
+
+    
+<!--相册上传API -->
+<div style="display: none;">
+    <div id="uploadAlbumContainer">
+        <div>
+            <div style="position: absolute;">
+                <div class="btnUploadAlbum"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 头像上传API -->
+<div style="display: none;">
+    <div id="uploadHeadContainer">
+        <div>
+            <div style="position: absolute;">
+                <div class="btnUploadHead"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--star_弹框-->
+<div class="cd-popup" id="TeacherAlbum">
+    <div class="cd-popup-container">
+        <a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+        <h4 class="f_code_th">上传相册<p>最多可以上传10张</p></h4>
+
+        <ul class="up_box list_5 clearfix" style="overflow-y: scroll;height:350px;" id="picContainer">
+            <li>
+                <div class="file-box file-box_pic">
+                    <input type="submit" name="submit" class="pic_up_btn" value="" onclick="UploaderAlbumImgClick(this)" />
+                </div>
+            </li>
+                    <li class="picturelist">
+
+                        <div class="box">
+                            <span class="del_pic"></span>
+                            <a href="javascript:void(0)"><img src="http://picture.ygjj.com//Teacher//20181108//0a0a5783-b5e2-4bb5-a2fd-db2854c79408.png" alt="" key="0a0a5783-b5e2-4bb5-a2fd-db2854c79408" url="Teacher//20181108//0a0a5783-b5e2-4bb5-a2fd-db2854c79408.png"></a>
+                            <div class="f_d_text">
+                                <input type="text" class="fill_pic_text" value="左边是我" placeholder="添加描述，最多12个字" maxlength="12">
+                            </div>
+                        </div>
+                    </li>
+        </ul>
+        <!--end一行-->
+
+        <div class="btn_20">
+            <a href="javascript:void(0)" class="cd-popup-close transition_a round_m btn_border_gray">关闭</a>
+            <a href="javascript:void(0)" class="round_m submit_btn transition_a" id="btnSubmitAlbum">确认提交</a>
+        </div>
+        <!--end按钮-->
+    </div>
+</div>
+<!--end_弹框-->
+
+<script>
+    $(function () {
+        //上传相册
+        UploaderSwfLoadAlbm();
+
+        $("#btnSubmitAlbum").click(function () {
+            var $this = $(this);
+            var pictures = [];
+            if ($('#picContainer .picturelist:visible').length > 0) {
+                $('#picContainer .picturelist:visible').each(function() {
+                    var item = {};
+                    item.description = $(this).find('input').val();
+                    item.url = $(this).find('img').attr('url');
+                    item.key = $(this).find('img').attr('key');
+                    pictures.push(item);
+                });
+            }
+            //else {
+            //    alert("请上传相册");
+            //    return false;
+            //}
+            var data = {};
+            data.headkey = $(".dtitem_photo img").attr("key");
+            data.headurl = $(".dtitem_photo img").attr("url");
+            data.pictures = pictures;
+            //console.log(data);
+            $this.text('正在提交中...').attr('disabled', 'disabled');
+
+           //简历完善
+            if (window.location.href.toLowerCase().indexOf('resume') > 0) {
+                $.post('/teacher/updatealbum',
+                    data,
+                    function(res) {
+                        window.location.reload();
+                    });
+            }
+            else //个人中心
+            {
+                $.post('/teacher/updatealbum', data, function (res) {
+                    if (res.success) {
+                        if (res.redirect) {
+                            window.location.href = res.redirect;
+                        } else {
+                            if (self == top) {
+                                window.location.href = "/";
+                            } else {
+                                top.location.href = "/";
+                            }
+                        }
+                    } else {
+                        alert(res.message);
+                        $this.text('提交').attr('disabled', false);
+                    }
+                });
+            }
+        });
+    });
+
+    function UploaderAlbumImgClick(obj) {
+        if ($(".picturelist").length >= 10) {
+            alert("最多上传10张图片");
+            return;
+        }
+        if (uploadStatus == 2) {
+            alert("当前正在上传图片,请稍后!");
+            return;
+        }
+        $(obj).addClass("uploaderAlbumButton");
+        $("#uploaserNewImgUrl").val("");
+        var uploaderSwf = $("#uploaderAlbumSwfId").val();
+        $("#" + uploaderSwf + "_html5").click();
+    }
+
+    //上传相册
+    function UploaderSwfLoadAlbm() {
+        var uploader = new plupload.Uploader({
+            runtimes: 'html5,flash',
+            browse_button: 'btnUploadAlbum',
+            container: 'uploadAlbumContainer',
+            max_file_size: '10mb',
+            url: '/file/UploadTeacherAlbum/',
+            flash_swf_url: '/js/plugins/plupload/plupload.flash.swf',
+            multipart_params: { "policy": $("#policy").val(), "signature": $("#signature").val() },
+            multi_selection: false,
+            filters: [{
+                title: "选择图片", extensions: "jpg,gif,png",
+                max_file_size: '10mb'
+            }]
+        });
+        uploader.init();
+
+
+        uploader.bind('FilesAdded', function (up, files) {
+
+            var html = "";
+
+            var domObj = $(".uploaderAlbumButton");
+            var width = domObj.width();
+            var height = domObj.height();
+            var offset = domObj.offset();
+            //487 495  247 230
+            $("#UploaderPercentImg").css({
+                left: (offset.left - 4),
+                top: (offset.top + height / 2 - 17),
+                width: (width - 8)
+            });
+            $("#UploaderPercentImg").show();
+            uploadStatus = 2; //正在上传
+            uploader.start();
+        });
+
+        uploader.bind('UploadProgress', function (up, file) {
+            $("#UploaderPercentImg .progress-bar").css("width", file.percent + "%");
+        });
+
+        uploader.bind('FileUploaded', function (up, file, msg) {
+            $("#UploaderPercentImg .progress-bar").css("width", "0%");
+            $("#UploaderPercentImg").hide();
+            var json = $.parseJSON(msg.response);
+            if (json.code == 200) {
+                uploadStatus = 1;
+                $("#uploaserNewImgUrl").val(json.url);
+                var html="<li class='picturelist'><div class='box'><span class='del_pic'></span><a href='javascript:void(0)'><img src='' alt=''></a><div class='f_d_text'><input type='text' class='fill_pic_text' value='' placeholder='添加描述，最多12个字' maxlength='12'> </div></div></li>";
+                var image = $(html);
+                image.on("click", '.del_pic', function () {
+                    $(this).parent().remove();
+                });
+                image.find('img').attr("src", "http://picture.ygjj.com/" + json.url);
+                image.find('img').attr("key", json.key);
+                image.find('img').attr("url", json.url);
+                $("#picContainer").append(image);
+            } else {
+                uploadStatus = -1;
+                show("图片上传出现错误!请刷新重试");
+            }
+        });
+        uploader.bind('Error', function (up, file) {
+            $(".progbarZone .bar").css("width", "0%");
+            $(".status-wrapper .progbarZone").hide();
+            show("图片上传出现错误!请刷新重试");
+            uploadStatus = -1;
+        });
+        $("#uploaderAlbumSwfId").val(uploader.id);
+    }
+</script>
+
+    <style>
+    .container {
+        max-width: 640px;
+        margin: 20px auto;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    /* Override Cropper's styles */
+    .cropper-view-box,
+    .cropper-face {
+        /*border-radius: 50%;*/
+    }
+</style>
+
+<div class="progbarZone" id="UploaderPercentImg" style="position: absolute;">
+    <div class="progress" style="height: 9px; margin-bottom: 0px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%;"></div>
+    </div>
+</div>
+<input id="remoteHostUrl" type="hidden" value="http://127.0.0.1:60001/" />
+<input id="uploaderSwfId" value="" type="hidden" />
+<input id="uploaderAlbumSwfId" value="" type="hidden" />
+<input id="uploaserNewImgUrl" value="" type="hidden" />
+<input id="hdSupplierId" value="" type="hidden" />
+<!--相册上传API -->
+<div style="display: none;">
+    <div id="uploadHeadContainer">
+        <div>
+            <div style="position: absolute;">
+                <div class="btnUploadHead"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--star_弹框-->
+<div class="cd-popup" id="TeacherHead">
+    <div class="cd-popup-container">
+        <a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+        <h4 class="f_code_th">上传头像</h4>
+        <div class="btn_20">
+            <a href="javascript:void(0)" id="btnSelect" class="transition_a round_m btn_border_gray">选择图片</a>
+            <a href="javascript:void(0)" class="round_m submit_btn transition_a" id="btnUpload">提交头像</a>
+        </div>
+        <ul class="up_box list_5 clearfix" style="height: 450px;overflow-y: auto">
+            <div class="container">
+               
+
+                <form id="registerForm" action="/teacher/updateHeadPic" method="post">
+                    <div>
+                        <img id="image" alt="">
+                    </div>
+                    <div id="result"></div>
+                    <div class="preview"></div>
+
+                </form>
+            </div>
+        </ul>
+        <!--end一行-->
+
+        
+        <!--end按钮-->
+    </div>
+</div>
+<!--end_弹框-->
+
+
+</head>
+<body>
+    <div class="header_i min_1200">
+        <div class="w_1200">
+            <h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+            <h2 class="fl logo_text">完善简历 展现出优秀的自己！</h2>
+        </div>
+    </div>
+    <!--end头文件-->
+
+    
+
+
+
+<!--end一行的左-->
+<div class="w_1200">
+    <div class="pic_up_box clearfix">
+        <div class="file-box fl">
+            
+            
+
+            <input type="submit" name="submit" class="btn round_r cd-popup-trigger" value="" target="#TeacherHead" />
+            
+        </div>
+
+        <div class="r_cell">
+            <ul class="adv_ul font_15">
+                <li class="png">有照片的教员关注度超出没照片的<b class="orange_text font_22">7</b>倍</li>
+                <li class="png">有照片的教员成功找到家教的比例比没照片的高出约<b class="orange_text font_22">9</b>倍</li>
+                <li class="png">有照片的教员被搜索到的比例比没照片的教员高出<b class="orange_text font_22">11</b>倍</li>
+            </ul>
+        </div>
+    </div>
+    <!--end一行-->
+
+
+    <h4 class="th_arrow">
+        <span class="fr">
+            <a href="javascript:0;" class="png up_btn round_m transition_a cd-popup-trigger" target="#TeacherAlbum">上传</a>
+        </span>
+        <span class="fl">我的相册</span>
+    </h4>
+
+    <div class="hide_box">
+        <ul class="photo_ul font_15 list_4">
+                <li>
+                    <a href="javascript:void(0)" class="transition_a">
+                        <div class="pic_cell pic_280">
+                            <img src="http://picture.ygjj.com//Teacher//20181108//0a0a5783-b5e2-4bb5-a2fd-db2854c79408.png" alt="" width="280" height="280">
+                        </div>
+                        <p>左边是我</p>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <!--end我的相册-->
+
+    <!--end提示-->
+
+    <div class="btn_c">
+        <input type="button" onclick="window.location.href='/resume/certificate'" class="login_btn round_m transition_a" value="下一步，证件上传">
+    </div>
+</div>
+<!--end一行的右-->
+
+<script>
+    var croppable = false;
+    $(function () {
+        //上传头像至本站点
+        UploaderSwfLoad();
+
+
+        var $image = $('#image');
+        var $button = $('#btnUpload');
+        var $btnUpload = $('#btnUpload');
+        var $btnSelect = $('#btnSelect');
+
+        $image.cropper({
+            aspectRatio: 1,
+            viewMode: 1,
+            dragMode: 'move',
+            ready: function () {
+                croppable = true;
+            }
+        });
+
+        $btnSelect.on('click', function () {
+            UploaderHeadImgClick(this);
+        });
+
+        $btnUpload.on('click', function () {
+            UploadClick();
+        });
+    });
+
+    function UploadClick() {
+
+        var croppedCanvas;
+        var roundedCanvas;
+
+        if (!croppable) {
+            alert('请先选择要上传的头像');
+            return;
+        }
+        var $image = $('#image');
+        // Crop
+        croppedCanvas = $image.cropper('getCroppedCanvas');
+
+        // Round
+        roundedCanvas = getRoundedCanvas(croppedCanvas);
+
+        // Show
+        //$result.html('<img src="' + roundedCanvas.toDataURL() + '">');
+        var fileImg = roundedCanvas.toDataURL();
+
+        $("#registerForm").attr("enctype", "multipart/form-data");
+
+        var formData = new FormData($("#registerForm")[0]);
+        formData.append("imgBase64", fileImg);//
+        //$("#registerForm").submit();
+
+        $.ajax({
+            url: "/teacher/updateHeadPic",
+            type: 'POST',
+            data: formData,
+            timeout: 10000, //超时时间设置，单位毫秒
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (result) {
+                if (result.success) {
+                    window.location.reload();
+                } else {
+                    alert(result.message);
+                }
+            },
+            error: function (returndata) {
+            }
+        });
+
+    }
+
+    function getRoundedCanvas(sourceCanvas) {
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        var width = sourceCanvas.width;
+        var height = sourceCanvas.height;
+
+        canvas.width = width;
+        canvas.height = height;
+        context.beginPath();
+        context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI);
+        context.strokeStyle = 'rgba(0,0,0,0)';
+        context.stroke();
+        context.clip();
+        context.drawImage(sourceCanvas, 0, 0, width, height);
+
+        return canvas;
+    }
+
+
+
+    var uploadStatus = 0;
+    function UploaderHeadImgClick(obj) {
+        if (uploadStatus == 2) {
+            alert("当前正在上传图片,请稍后!");
+            return;
+        }
+        $(obj).addClass("uploaderImgButton");
+        $("#uploaserNewImgUrl").val("");
+        var uploaderSwf = $("#uploaderSwfId").val();
+        $("#" + uploaderSwf + "_html5").click();
+    }
+
+    //上传头像
+    function UploaderSwfLoad() {
+        var uploader = new plupload.Uploader({
+            runtimes: 'html5,flash',
+            browse_button: 'btnUploadHead',
+            container: 'uploadHeadContainer',
+            max_file_size: '10mb',
+            url: '/file/UploadTeacherHeaderToLocal/',
+            flash_swf_url: '/js/plugins/plupload/plupload.flash.swf',
+            multipart_params: { "policy": $("#policy").val(), "signature": $("#signature").val() },
+            multi_selection: false,
+            filters: [{
+                title: "选择图片", extensions: "jpg,gif,png",
+                max_file_size: '10mb'
+            }]
+        });
+        uploader.init();
+
+
+        uploader.bind('FilesAdded', function (up, files) {
+
+            var html = "";
+
+            var domObj = $(".uploaderImgButton");
+            var width = domObj.width();
+            var height = domObj.height();
+            var offset = domObj.offset();
+            //487 495  247 230
+            $("#UploaderPercentImg").css({
+                left: (offset.left - 4),
+                top: (offset.top + height / 2 - 17),
+                width: (width - 8)
+            });
+            $("#UploaderPercentImg").show();
+            uploadStatus = 2; //正在上传
+            uploader.start();
+        });
+
+        uploader.bind('UploadProgress', function (up, file) {
+            $("#UploaderPercentImg .progress-bar").css("width", file.percent + "%");
+        });
+
+        uploader.bind('FileUploaded', function (up, file, msg) {
+            $("#UploaderPercentImg .progress-bar").css("width", "0%");
+            $("#UploaderPercentImg").hide();
+            var json = JSON.parse(msg.response);
+            if (json.code == 200) {
+                uploadStatus = 1;
+                $("#image").attr("src", "http://www.ygjj.com/" + json.url);
+                $("#image").attr("url", json.url);
+                var $image = $('#image');
+                var $previews = $('.preview');
+                $image.cropper('replace', $("#image").attr("src"));
+                $image.cropper({
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    ready: function () {
+                        croppable = true;
+                    },
+                    crop: function (e) {
+                        var imageData = $(this).cropper('getImageData');
+                        var previewAspectRatio = e.width / e.height;
+
+                        $previews.each(function () {
+                            var $preview = $(this);
+                            var previewWidth = $preview.width();
+                            var previewHeight = previewWidth / previewAspectRatio;
+                            var imageScaledRatio = e.width / previewWidth;
+
+                            $preview.height(previewHeight).find('img').css({
+                                width: imageData.naturalWidth / imageScaledRatio,
+                                height: imageData.naturalHeight / imageScaledRatio,
+                                marginLeft: -e.x / imageScaledRatio,
+                                marginTop: -e.y / imageScaledRatio
+                            });
+                        });
+                    }
+                });
+            } else {
+                uploadStatus = -1;
+                alert("图片上传出现错误!请刷新重试");
+            }
+        });
+        uploader.bind('Error', function (up, file) {
+            $(".progbarZone .bar").css("width", "0%");
+            $(".status-wrapper .progbarZone").hide();
+            alert("图片上传出现错误!请刷新重试");
+            uploadStatus = -1;
+        });
+        $("#uploaderSwfId").val(uploader.id);
+    }
+
+</script>
+    <!--end中间区域-->
+
+
+
+
+
+   
+</body>
+</html>

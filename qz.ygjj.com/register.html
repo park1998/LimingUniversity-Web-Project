@@ -1,0 +1,223 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=1200" />
+    <title>家教_家教网_【水木年华家教网】_中国领先的家教辅导服务专业平台</title>
+    <meta name="keywords" content="家教，家教网，家教中心，水木年华家教网" />
+    <meta name="description" content="水木年华家教网是中国领先的家教辅导服务专业平台，服务覆盖全国，已为10多万学员提供上百种科目的数十万兼职大学生家教、专职教师和专业人士。上门授课，免费试教。400-700-7788" />
+    <meta name="applicable-device" content="pc">
+    <link rel="stylesheet" type="text/css" href="css/css_12.css">
+    <script src="js/jquery-1.9.1.min_12.js"></script>
+    <script src="js/jquery-ui_11.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript">
+    document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5_12.js"></script>
+    <![endif]-->
+    
+    <script src="js/yg_ac_utils_4.js"></script>
+    <script type="text/javascript">var acUtils = new PPDAcUtils("v1.0");</script>
+
+    <script src="js/jquery.placeholder.min_2.js"></script>
+    <script src="js/jquery.cookie.min_6.js"></script>
+    <script src="js/register.js"></script>
+    <style>
+        .errorMessage {
+            clear: both;
+            display: none;
+            padding-left: 23px;
+            height: 32px;
+            font: 12px/32px "SimSun";
+            color: #db0101;
+            background: url(images/error_12.png) left center no-repeat;
+        }
+        .btnbox {
+            display: block;
+            margin: -5px 0 0 0px;
+            border: 0;
+            padding: 0;
+            width: 134px;
+            height: 44px;
+            float: left;
+            display: inline;
+            background: url(images/icon_12.png) left -296px no-repeat;
+            cursor: pointer;
+            font: 14px/44px "Microsoft Yahei";
+            color: #ffa800;
+            text-align: center;
+        }
+
+    </style>
+
+
+    <script type="text/javascript" src="js/tool_12.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/code_12.css">
+    <script type="text/javascript" src="js/code_12.js"></script>
+</head>
+<body>
+    <div class="header_i min_1200">
+        <div class="w_1200">
+            <h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+            <h2 class="fl logo_text">找家教，来水木年华家教网！</h2>
+
+                <div class="header_i_r fr">&nbsp;已有账号，请<a href="Login.html" class="btn_border round_m transition_a">登录</a></div>
+                <div class="header_i_r fr"> 没有账号？，请<a href="register.html" class="btn_border round_m transition_a">注册</a></div>
+        </div>
+    </div>
+    <!--end头文件-->
+    
+
+
+<div class="w_1040 clearfix login_center" style="margin-bottom:120px; margin-top:5em;">
+    <div class="fl w_410">
+        <dl class="tab_nav reg_tab_nav_n">
+            <dd class="do-ajax">
+                <a href="javascript:void(0)" style="margin-left: 110px;" class="tab_light">我是学员<em class="png"></em></a>
+                <a href="javascript:void(0)">我是教员<em class="png"></em></a>
+            </dd>
+        </dl>
+        <div class="login_fill @*tab_box*@">
+            <div id="mobilereg">
+                <div class="login_o">
+                    <div class="login_div">
+                        <label class="fl" for="mobilephone">手机号码</label>
+                        <div class="r_cell">
+                            <input type="text" class="login_text" id="mobilephone" name="mobilephone" placeholder="请输入您的手机号">
+                        </div>
+                        <p class="errorMessage"></p>
+                    </div>
+                </div>
+
+                <div class="login_o">
+                    <div class="login_div">
+                        <label class="fl" for="pass1">设置密码</label>
+                        <div class="r_cell">
+                            <input type="password" class="login_text password" id="Password" name="Password" placeholder="密码长度6~16位，数字、字母、字符等">
+                        </div>
+                        <p class="errorMessage"></p>
+                    </div>
+                </div>
+
+
+                <div class="login_o">
+                    <div class="login_div">
+                        <label class="fl" for="pass2">确认密码</label>
+                        <div class="r_cell">
+                            <input type="password" class="login_text password" id="cfmPassword" name="cfmPassword" placeholder="再次输入密码">
+                        </div>
+                        <p class="errorMessage"></p>
+                    </div>
+                </div>
+
+                <div class="login_o">
+                    <div class="login_div">
+                        <span class="login_ma orange_link">
+                            <a href="javascript:void(0)">
+                                <img src="picture/788e623c38444dc394d4b6ff7fc3e4f9.gif" width="80" height="30" id="imgCode" onclick="document.getElementById('imgCode').src = '/register/GetValidCode?tmp=' + Math.random()" alt="验证码" title="看不清？点击换一张">
+                            </a>
+                            
+                        </span>
+                        <label class="fl" for="ma3">图形验证码</label>
+                        <div class="r_cell">
+                            <input type="text" class="login_text" id="imgvefyData" name="imgvefyData" placeholder="请输入图形验证码">
+                        </div>
+                        <p class="errorMessage"></p>
+                    </div>
+                </div>
+
+                <div class="login_o">
+                    <div class="login_div">
+                        <span class="login_ma orange_link">
+                            <input class="btnbox" style="color: #20adad;" type="button" id="getvefydata" value="发送验证码">
+                            
+                        </span>
+                        <label class="fl" for="ma1">验证码</label>
+                        <div class="r_cell">
+                            <input type="text" class="login_text" id="mbyzm" name="mbyzm" placeholder="请输入验证码">
+                        </div>
+                        <p class="errorMessage"></p>
+                    </div>
+                </div>
+
+                <div class="login_o_l orange_link">
+                    <p class="errorMessage"></p>
+                </div>
+
+                <div class="login_btn_div">
+                    <button type="submit" class="login_btn round_m transition_a" id="mobireg">注 册</button>
+                </div>
+                
+            </div>
+        </div>
+        <!--end左边_标签内容-->
+    </div>
+    <!--end左边-->
+    <div class="fr login_wechat">
+        <img src="images/kefu.png" alt="" class="login_wechat_200" width="200" height="200">
+        <h4 class="orange_text">如有问题寻求帮助</h4>
+        <p>请扫描微信二维码</p>
+    </div>
+    <!--end右边-->
+</div>
+<!--end中间区域-->
+
+    <!--end文件底-->
+    <!--star_弹框-->
+    <div class="cd-popup">
+        <div class="cd-popup-container" style="width: 420px;">
+            <a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+
+            <h4 class="f_code_th">
+                绑定已有帐号
+                <p>绑定已有的水木年华家教账号</p>
+            </h4>
+
+
+            <div class="box_20">
+
+                <div class="login_o">
+                    <div class="login_div">
+                        <label class="fl" for="phone_o">登录手机号</label>
+                        <div class="r_cell"><input type="text" class="login_text" id="phone_o" name="phone_o" placeholder="请输入您的手机号"></div>
+                    </div>
+                </div>
+
+
+                <div class="login_o">
+                    <div class="login_div error_text_red">
+                        <label class="fl" for="pass_qq">登录密码</label>
+                        <div class="r_cell"><input type="text" class="login_text" id="pass_qq" name="pass_qq" placeholder="请输入登录密码"></div>
+                    </div>
+                    <div class="login_error png_img"><img src="picture/login_error_6.png" alt="" width="16" height="16">输入密码有误</div>
+                </div>
+
+
+
+                <div class="login_btn_div btn_d">
+                    <input type="button" class="login_btn round_m transition_a" value="立即绑定">
+                    <p class="blue_link"><a href="javascript:void(0)">注册新的账号</a></p>
+                </div>
+
+            </div>
+            <!--end一行-->
+
+        </div>
+    </div>
+    <!--end_弹框-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="js/dd_belatedpng_11.js"></script>
+    <script>
+    DD_belatedPNG.fix('.png_img img,.png');
+    </script>
+    <![endif]-->
+    
+
+</body>
+</html>

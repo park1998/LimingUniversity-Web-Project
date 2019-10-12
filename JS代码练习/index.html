@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<style>
+			#back{
+				width: 200px;
+				height: 200px;
+				background: red;
+				border: 6px solid red;
+				display: block;
+			}
+		</style>
+		
+		<script>
+			window.onload= function(){
+				var obtn1=document.getElementById('btn_show');
+				var obtn2=document.getElementById('btn_hide');
+				var odiv1=document.getElementById('back');
+				var strong1=document.getElementById('same')
+				
+			    obtn1.onclick=show;
+				
+                function show(){
+					odiv1.style.display='block';
+					odiv1.style.background='yellow';
+					odiv1.style.width='300px';
+				}
+				
+				obtn2.onclick= hide;
+				function hide(){
+					odiv1.style.display='none';
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input id="btn_show" type="button" value="显示" />
+		<input id="btn_hide" type="button" value="隐藏" />
+		<div id="back"></div>
+	</body>
+</html>

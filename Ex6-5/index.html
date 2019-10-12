@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body {
+				width: 800px;
+				margin: 0 auto;
+				background: #f1f1f1;
+			}
+			
+			.contain {
+				margin-top: 20px;
+				margin-left: 100px;
+				margin-bottom: 20px;
+			}
+			
+			.footer {
+				margin-bottom: 100px;
+			}
+			
+			a {
+				display: inline-block;
+				text-decoration: none;
+				width: 120px;
+				height: 40px;
+				background: #AFEEEE;
+				text-align: center;
+				line-height: 40px;
+				color: darkgoldenrod;
+				font-weight: 800;
+				margin-left: 50px;
+				font-size: 18px;
+				border-radius: 10px;
+				box-shadow: 10px 0px 5px #888888;
+				border: 2px solid cornflowerblue;
+			}
+			
+			img {
+				box-shadow: 10px 5px 5px #888888;
+			}
+			
+			p,
+			h2 {
+				box-shadow: 10px 5px 5px #888888;
+				border-radius: 4px;
+			}
+			
+			a:hover {
+				background: darkgoldenrod;
+				color: #AFEEEE;
+			}
+			
+			#UL {
+				margin-top: 10px;
+				list-style: none;
+				border: 4px solid cornflowerblue;
+				border-radius: 4px;
+				box-shadow: 10px 6px 6px #888888;
+			}
+			
+			.Big img {
+				width: 200px;
+				height: 250px;
+				border-radius: 10px;
+				border: 5px solid cornflowerblue;
+				display: block;
+				position: absolute;
+			}
+			
+			.Big li {
+				list-style: none;
+				height: 266px;
+				margin-top: 50px;
+				position: relative;
+				margin-bottom: 50px;
+			}
+			
+			.Big h2,
+			p {
+				position: absolute;
+			}
+			
+			.Big h2 {
+				top: 26px;
+				left: 300px;
+				font-size: 36px;
+				font-weight: bold;
+				font-size: 28px;
+			}
+			
+			.Big p {
+				top: 96px;
+				left: 300px;
+				font-size: 20px;
+				color: gray;
+			}
+			
+			.Small img {
+				width: 110px;
+				height: 110px;
+				border-radius: 10px;
+				border: 5px solid cornflowerblue;
+			}
+			
+			.Small li {
+				list-style: none;
+				position: relative;
+				height: 126px;
+				margin-top: 30px;
+				margin-left: 20px;
+				margin-bottom: 30px;
+			}
+			
+			.Small h2,
+			p {
+				position: absolute;
+			}
+			
+			.Small h2 {
+				top: 6px;
+				left: 200px;
+				font-size: 24px;
+				font-weight: bold;
+			}
+			
+			.Small p {
+				top: 56px;
+				left: 200px;
+				font-size: 16px;
+				color: gray;
+			}
+			
+			.List img {
+				width: 30px;
+				height: 30px;
+				margin-left: 10px;
+			}
+			
+			.List li {
+				list-style: none;
+				position: relative;
+				border-bottom: 4px solid cornflowerblue;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-right: 30px;
+			}
+			
+			.List h2,
+			p {
+				position: absolute;
+			}
+			
+			.List h2 {
+				display: none;
+			}
+			
+			.List p {
+				font-weight: 1000;
+				top: -10px;
+				left: 60px;
+				font-size: 18px;
+				color: black;
+			}
+			
+			li:hover {
+				background: #AFEEEE;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oBtnBig = document.getElementById('big');
+				var oBtnSmall = document.getElementById('small');
+				var oBtnList = document.getElementById('list');
+				var oUL = document.getElementById('UL');
+
+				oBtnBig.onclick = function() {
+					oUL.className = 'Big';
+				}
+
+				oBtnSmall.onclick = function() {
+					oUL.className = 'Small';
+				}
+				oBtnList.onclick = function() {
+					oUL.className = 'List';
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="contain">
+			<a id="big" href="#">大图展示</a>
+			<a id="small" href="#">小图展示</a>
+			<a id="list" href="#">列表展示</a>
+		</div>
+		<div class="footer">
+			<ul id="UL" class="Big">
+				<li>
+					<img src="img/1.jpg" />
+					<h2>网球王子</h2>
+					<p>越前龙马</p>
+				</li>
+				<li>
+					<img src="img/2.jpg" />
+					<h2>网球王子</h2>
+					<p>手冢国光</p>
+				</li>
+				<li>
+					<img src="img/3.jpg" />
+					<h2>网球王子</h2>
+					<p>不二周助</p>
+				</li>
+				<li>
+					<img src="img/4.jpg" />
+					<h2>网球王子</h2>
+					<p>辛村精市</p>
+				</li>
+				<li>
+					<img src="img/5.jpg" />
+					<h2>网球王子</h2>
+					<p>白石藏之介</p>
+				</li>
+				<li>
+					<img src="img/6.jpg" />
+					<h2>网球王子</h2>
+					<p>迹部景吾</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

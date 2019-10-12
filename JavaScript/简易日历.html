@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* { padding: 0; margin: 0; }
+            li { list-style: none; }
+            body { background: #f6f9fc; font-family: arial; }
+            #div1 .back{
+            	background: cornflowerblue;
+            }
+            #div1{
+            	width: 240px;
+            	margin: 30px;
+            	background: #eae9e9;
+            	padding-bottom: 10px;
+            }
+            #div1 ul{
+            	width: 210px;
+                overflow: hidden;
+                margin-left: 20px;
+                margin-top: 10px;
+                padding-bottom: 10px;
+            }
+            #div1 li{
+            	float: left; 
+            	width: 58px; 
+            	height: 54px; 
+            	margin: 10px 10px 0 0; 
+            	border: 1px solid #fff; 
+            	background: #424242; 
+            	color: #fff; 
+            	text-align: center; 
+            	cursor: pointer; 
+            }
+            #div1 h2{
+            	margin-top: 6px;
+            	font-size: 18px;
+            }
+            #innerdiv{
+            	border: 1px solid white;
+            	width: 200px;
+            	padding-bottom: 10px;
+            	margin-left: 20px;
+            	height: 68px;
+            	margin-bottom: 10px;
+            }
+            #innerdiv h2{
+            	margin-left:10px ;
+            }
+            #innerdiv p{
+            	margin-left: 10px;
+            }
+		</style>
+		<script>	
+			window.onload=function(){
+				var odiv1=document.getElementById('div1');
+				var eli=odiv1.getElementsByTagName('li');
+				var otext=document.getElementById('innerdiv');
+				var aDatas=[
+	                 '一月,你好123123',
+	                 '二月,我金融界鹅肉请教',
+	                 '三月,45asds6a6ds5',
+	                 '四月,就我决斗我',
+	                 '五月,78787',
+	                 '六月,45asds6a6ds5',
+	                 '七月,45asds6a6ds5',
+	                 '八月,45asds6a6ds5',
+	                 '九月,45asds6a6ds5',
+	                 '十月,45asds6a6ds5',
+	                 '十一月,45asds6a6ds5',
+	                 '十二月,45asds6a6ds5'
+				];
+				for(var i=0;i<eli.length;i++)
+				{   
+					eli[i].index=i;
+					eli[i].onmouseover=function(){
+						for(var i=0;i<eli.length;i++)
+						{
+							eli[i].className='';
+						}
+						this.className='back';
+						otext.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+aDatas[this.index] +'</p>';   
+					};
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<ul>
+				<li class="back"><h2>1月</h2><p>Mon</p></li>
+				<li><h2>2月</h2><p>Mon</p></li>
+				<li><h2>3月</h2><p>Mon</p></li>
+				<li><h2>4月</h2><p>Mon</p></li>
+				<li><h2>5月</h2><p>Mon</p></li>
+				<li><h2>6月</h2><p>Mon</p></li>
+				<li><h2>7月</h2><p>Mon</p></li>
+				<li><h2>8月</h2><p>Mon</p></li>
+				<li><h2>9月</h2><p>Mon</p></li>
+				<li><h2>10月</h2><p>Mon</p></li>
+				<li><h2>11月</h2><p>Mon</p></li>
+				<li><h2>12月</h2><p>Mon</p></li>
+			</ul>
+			<div id="innerdiv">
+				 <h2>1月活动</h2>
+                 <p>快过年了，大家可以商量着去哪玩吧～</p>
+			</div>
+		</div>
+	</body>
+</html>

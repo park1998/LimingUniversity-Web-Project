@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=1200" />
+		<title>水木年华家教</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/code.css">
+		<!--[if IE 6]>
+    <script type="text/javascript">
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+		<!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+
+		<script src="js/jQuery.rTabs.js"></script>
+		<script src="js/search_tab.js"></script>
+
+		<link href="js/artDialog/skins/brief.css" rel="stylesheet" />
+		<script src="js/artDialog/jquery.artDialog.min.js"></script>
+
+		<!--[if IE 6]>
+    <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.png_img img,.png');
+    </script>
+    <![endif]-->
+
+	</head>
+
+	<body>
+
+		<input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/account/login?returnUrl=http://qz.ygjj.com/user/orderlist" />
+		<div class="header min_1200">
+			<div class="w_1200">
+				<h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+
+				<!--star搜索-->
+				<div class="pub-search">
+					<form class="search-form" method="GET" action="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">
+						<div class="search-box">
+							<ul class="transition_a">
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="学员搜索" target="http://qz.ygjj.com/xy_a0_s0_d0_x0_t0_o0_g1">学员</li>
+							</ul>
+							<input placeholder="搜教员\搜学员" type="text" name="keyword" value="" />
+							<input type="button" class="search_btn" value="搜索">
+						</div>
+					</form>
+				</div>
+				<!--end搜索-->
+				<div class="header_r fr">
+					<span class="font_16">客服微信：</span>
+					<img src="images/kefu.png" class="wechat_img" alt="水木年华家教客服微信" width="80" height="80">
+
+					<span class="font_13">
+                    <b class="orange_link">
+                        <a href="/account/logout" class="heada">退出</a>
+                    </b>
+                    <em class="china"></em>
+                    <b class="orange_link">
+                        <a href="/User/Index" class="heada">我的</a>
+                    </b>
+                                                            </span>
+				</div>
+				<!--end头文件右-->
+			</div>
+		</div>
+		<!--end头文件-->
+
+		<!--end头文件-->
+
+		<div class="nav min_1200">
+			<div class="tnav w_1200" id="slideNav">
+				<span><a href="/home" class="current_nav">泉州家教</a></span>
+				<span><a href="/home/cost">家教价格</a></span>
+				<span><a href="/Teachers.aspx">家教老师库</a></span>
+				<span><a href="/Orders.aspx">学员库</a></span>
+				<i class="tavline" id="slideNavLine"></i>
+			</div>
+		</div>
+
+		<div class="tearch_banner min_1200 studen_banner">
+			<div class="w_1200">
+				<dl class="studen_banner_dl png_img">
+					<dd class="r_cell">
+						<ul class="list_ul gray_link gray_text">
+							<li><span class="font_34 eng">0</span>
+								<p>累计发布需求</p>
+							</li>
+							<li><span class="font_34 eng">0</span>
+								<p>累计选择授课教员</p>
+							</li>
+							<li><span class="font_34 eng">0</span>
+								<p>当前发布中需求</p>
+							</li>
+						</ul>
+						<div class="btn_r">
+							<a href="/user/publish" class="round_m png write_btn">立即发布需求</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--end一行-->
+		<!-- end nav -->
+		<div class="w_1200 d_center white_bj">
+			<div class="fl w_300 box_line">
+				<dl class="tearch_l_nav">
+					<dt><span>快捷操作</span></dt>
+					<dd>
+						<div class="t clearfix">
+							<h5>家教管理</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/publish">发布需求</a>
+								</li>
+								<li>
+									<a href="/user/orderlist">我的订单</a>
+								</li>
+								<li>
+									<a href="/user/myview">查看记录</a>
+								</li>
+								<li>
+									<a href="/user/appoint">预约记录</a>
+								</li>
+								<li>
+									<a href="/user/judge">评价教员</a>
+								</li>
+								<li>
+									<a href="/user/favourite">我的收藏</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>积分</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/pay">购买积分</a>
+								</li>
+								<li>
+									<a href="/user/scorerecord">积分记录</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>帐户管理</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/user/profile">基本信息</a>
+								</li>
+								<li>
+									<a href="/user/password">更改密码</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="r_cell box_r">
+
+				<dl class="tab_nav r_tab_nav">
+					<dd>
+						<a href="javascript:void(0)" class="tab_light">发布中</a>
+						<a href="/user/ClosedOrderList">已关闭</a>
+					</dd>
+				</dl>
+				<div class="tab_box list_tb">
+					<div>
+						<table class="list_table hover_table">
+							<thead>
+								<tr>
+									<th>订单编号</th>
+									<th>科目</th>
+									<th>发布时间</th>
+									<th>教员预约人数</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<dl class="page_o page_c">
+
+						</dl>
+					</div>
+				</div>
+				<!--end标签内容-->
+
+			</div>
+
+			<script>
+				$(".hurry").click(function() {
+					var requireId = $(this).closest("tr").data('id');
+					$.dialog.confirm('确定加急该订单吗,加急订单需要50积分？', function() {
+						var data = {};
+						data.RequireId = requireId;
+						$.post('/user/HurryOrder', data, function(res) {
+							if(res.success) {
+								$("#dialogPop").removeClass("show");
+								alert("订单加急成功");
+								window.location.reload();
+							} else {
+								if(res.code == -3) { //需要充值
+									$("#dialogPop").removeClass("show");
+									$.dialog.confirm('积分不足，是否现在充值？', function() {
+										window.location.href = "/user/pay";
+										return false;
+									});
+								} else {
+									alert(res.message);
+								}
+							}
+						});
+					})
+				});
+
+				$(".closeorder").click(function() {
+					var requireId = $(this).closest("tr").data('id');
+
+					$.dialog.confirm('确定关闭该订单吗？', function() {
+						var data = {};
+						data.RequireId = requireId;
+						$.post('/user/CloseOrder', data, function(res) {
+							if(res.success) {
+								alert("订单关闭成功");
+								window.location.reload();
+							} else {
+								alert(res.message);
+							}
+						});
+					})
+				});
+			</script>
+			<!--end一行的右-->
+		</div>
+		<!--end一行-->
+
+		<div class="clearfix d_link min_1200">
+			<div class="clearfix w_1200 d_link">
+				<div class="d_link_t clearfix">
+					<div class="d_link_tel fl">
+						<h4>服务热线</h4>
+						<p>(工作日9:00~18:00)</p>
+						<div class="d orange_text big_num font_34">400-700-7788</div>
+					</div>
+					<div class="r_cell">
+						<ul class="d_link_ul list_4 fl">
+							<li>
+								<h4>会员指南</h4>
+								<p>
+									<a href="/help/iam2" rel="nofollow">我是教员</a>
+								</p>
+								<p>
+									<a href="/help/iam1" rel="nofollow">我是学员</a>
+								</p>
+								<p>
+									<a href="/help/iam3" rel="nofollow">我是辅导班</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>网站导航</h4>
+								<p>
+									<a href="/home/subject" rel="nofollow">课程科目</a>
+								</p>
+								<p>
+									<a href="/help" rel="nofollow">帮助中心</a>
+								</p>
+								<p>
+									<a href="http://www.ygjj.com" rel="nofollow">服务城市</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>简介</h4>
+								<p>
+									<a href="/help/aboutus" rel="nofollow">关于我们</a>
+								</p>
+								<p>
+									<a href="/help/service" rel="nofollow">服务声明</a>
+								</p>
+								<p>
+									<a href="/help/Pivacy" rel="nofollow">隐私保护</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>合作</h4>
+								<p>
+									<a href="/help/friendlink" rel="nofollow">友情链接</a>
+								</p>
+							</li>
+						</ul>
+						<div class="r_cell d_link_wechat">
+							<h4>关注微信</h4>
+							<p><img src="images/kefu.png" alt="" width="120" height="120"></p>
+						</div>
+					</div>
+				</div>
+				<!--end一行-->
+				<!--end热门城市-->
+			</div>
+		</div>
+		<!--end链接-->
+
+		<!--end友情链接-->
+		</div>
+
+		<!--返回顶部-->
+		<div class="ftool_top">
+			<a href="#" class="top_ftoolab transition_a" id="ftoolTop"></a>
+		</div>
+		<!--返回顶部-->
+
+	</body>
+
+</html>

@@ -1,0 +1,62 @@
+.container{
+	height: 640px;
+	width: 400px;
+	border: 1px solid transparent;
+	position: relative;
+	background: url(../img/u=2459993126,355337234&fm=27&gp=0.jpg);
+}
+.col-sm-8
+{   
+	width: 330px;
+}
+.control-label
+{
+	margin-left:96px ;
+	
+}
+.control-label2
+{   
+	margin-top: 60px;
+	margin-left: 124px;
+}
+.control-label3
+{   
+	margin-top: 32px;
+	margin-left: 124px;
+}
+.form-control
+{   
+	text-align: center;
+}
+.form-horizontal
+{   
+	margin-top:130px ;
+	margin-left:30px ;
+}
+.number
+{
+	width: 300px;
+	height:  66px;
+	border: solid transparent 1px;
+	position: absolute;
+	top: 60px;
+}
+p
+{
+	text-align: center;
+	font-size: 24px;
+}
+.button-people
+{   
+	margin-top: 44px;
+	width: 300px;
+	background: #f4edad;
+}
+.button-order
+{   
+	font-family: "微软雅黑";
+	color: white;
+	width: 300px;
+	height: 50px;
+	background: #008fd1;
+}

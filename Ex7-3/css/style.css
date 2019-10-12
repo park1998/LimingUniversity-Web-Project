@@ -1,0 +1,46 @@
+body {
+	width: 600px;
+	height: 800px;
+	text-align: center;
+	font-size: 24px;
+	margin: 0 auto;
+}
+
+.HolyGrail {
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+footer {
+	flex: 1;
+	color: #fff;
+	background-color: #666666;
+	line-height: 250px;
+}
+
+.HolyGrail-body {
+	display: flex;
+	height: 250px;
+	line-height: 250px;
+	flex: 1;
+}
+
+.HolyGrail-content {
+	background-color: #d6d6d6;
+	flex: 1;
+}
+
+.HolyGrail-nav,
+.HolyGrail-ads {
+	flex: 0 0 150px;
+}
+
+.HolyGrail-nav {
+	background-color: #77bbdd;
+	order: -1;
+}
+
+.HolyGrail-ads {
+	background-color: #ff6633;
+}

@@ -1,0 +1,305 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=1200" />
+    <title>水木年华家教_教员简历完善-1</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/code.css">
+    <!--[if IE 6]>
+    <script type="text/javascript">
+    document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/tool.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript">
+        ; $(function () {
+            //显示或隐藏
+            $('.hide_a').click(function () {
+                $(this).parent().parent().parent('.add_box').hide('slow');
+            });
+            $('.add_a').click(function () {
+                $(this).parent().siblings('.add_box').fadeIn();
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="header_i min_1200">
+        <div class="w_1200">
+            <h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+            <h2 class="fl logo_text">完善简历 展现出优秀的自己！</h2>
+        </div>
+    </div>
+    <!--end头文件-->
+
+    
+
+<script src="/js/plugins/plupload/plupload.js"></script>
+<script src="/js/plugins/plupload/plupload.flash.js"></script>
+<script src="/js/plugins/plupload/plupload.html5.js"></script>
+<div class="progbarZone" id="UploaderPercentImg" style="position: absolute;">
+    <div class="progress" style="height: 9px; margin-bottom: 0px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%;"></div>
+    </div>
+</div>
+<input id="remoteHostUrl" type="hidden" value="http://127.0.0.1:60001/" />
+<input id="uploaderSwfId" value="" type="hidden" />
+<input id="uploaserNewImgUrl" value="" type="hidden" />
+<!-- 图片上传API -->
+<div style="display: none;">
+    <div id="uploadContainer">
+        <div>
+            <div style="position: absolute;">
+                <div class="btnUpload"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="progbarZone" id="UploaderPercentImg" style="position: absolute;">
+    <div class="progress" style="height: 9px; margin-bottom: 0px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%;"></div>
+    </div>
+</div>
+<input id="certificatetype" name="certificatetype" type="hidden" value="1" />
+<input id="certificatename" name="certificatename" type="hidden" value="" />
+<script>
+    var uploadStatus = 0;
+    $(function () {
+        UploaderSwfLoad();
+    })
+    function UploaderImgClick(obj) {
+        if (uploadStatus == 2) {
+            alert("当前正在上传图片,请稍后!");
+            return;
+        }
+        var type = $(obj).closest("li").data('id');
+        if (type == 6 || type == 7) {
+            if ($(obj).parent().parent().find('input').val() == '') {
+                alert("请填写证书名称!");
+                return;
+            }
+           
+        }
+        $("#certificatetype").val(type);
+        $("#certificatename").val($(obj).parent().parent().find('.fill_text').val());
+        $(obj).addClass("uploaderImgButton");
+        $("#uploaserNewImgUrl").val("");
+        var uploaderSwf = $("#uploaderSwfId").val();
+        $("#" + uploaderSwf + "_html5").click();
+        return false;
+    }
+    function UploaderSwfLoad() {
+        var uploader = new plupload.Uploader({
+            runtimes: 'html5,flash',
+            browse_button: 'btnUpload',
+            container: 'uploadContainer',
+            max_file_size: '10mb',
+            url: '/file/UploadTeaherCertificate/',
+            flash_swf_url: '/js/plugins/plupload/plupload.flash.swf',
+            multipart_params: {
+                "policy": '1',
+                "signature": $("#signature").val(),
+                "certificatetype": $("#certificatetype").val(),
+                "certificatename": $("#certificatename").val()
+            },
+            multi_selection: false,
+            filters: [{
+                title: "选择图片", extensions: "jpg,gif,png",
+                max_file_size: '10mb'
+            }]
+        });
+        uploader.init();
+
+        uploader.bind('BeforeUpload', function (uploader, filters) {
+            uploader.settings.multipart_params.certificatetype = $("#certificatetype").val();
+            uploader.settings.multipart_params.certificatename = $("#certificatename").val();
+        }
+       );
+        uploader.bind('FilesAdded', function (up, files) {
+            var domObj = $(".uploaderImgButton");
+            var width = domObj.width();
+            var height = domObj.height();
+            var offset = domObj.offset();
+            //487 495  247 230
+            $("#UploaderPercentImg").css({
+                left: (offset.left - 4),
+                top: (offset.top + height / 2 - 17),
+                width: (width - 8)
+            });
+            $("#UploaderPercentImg").show();
+            uploadStatus = 2; //正在上传
+            uploader.start();
+        });
+
+        uploader.bind('UploadProgress', function (up, file) {
+            $("#UploaderPercentImg .progress-bar").css("width", file.percent + "%");
+        });
+
+        uploader.bind('FileUploaded', function (up, file, msg) {
+            $("#UploaderPercentImg .progress-bar").css("width", "0%");
+            $("#UploaderPercentImg").hide();
+            var json = $.parseJSON(msg.response);
+            if (json.code == 200) {
+                uploadStatus = 1;
+               window.location.reload();
+
+            } else {
+                uploadStatus = -1;
+                alert("图片上传出现错误!请刷新重试");
+            }
+            $(".uploaderImgButton").removeClass("uploaderImgButton");
+        });
+        uploader.bind('Error', function (up, file) {
+            $(".progbarZone .bar").css("width", "0%");
+            $(".status-wrapper .progbarZone").hide();
+            alert("图片上传出现错误!请刷新重试");
+            uploadStatus = -1;
+        });
+        $("#uploaderSwfId").val(uploader.id);
+    }
+</script>
+<!--end一行的左-->
+<div class="w_1200">
+    <h4 class="th_arrow">
+        <b>证件上传</b><span class="font_14 m_t_b">（证件信息保密，不对外公开）</span>
+        <span class="sel_box font_14" id="showCer">
+            <input type="checkbox" id="a-1" name="a-1" checked />
+            <label for="a-1">同意上门出示证件</label>
+        </span>
+    </h4>
+
+
+    <div class="hide_box">
+        <ul class="book_up_ul list_3 img_border round_s_img">
+            <li data-id="1">
+                <div class="box">
+
+                            <h5>身份证</h5>
+                            <img src="http://picture.ygjj.com//Teacher//20181108//a371d101-bc7c-4b20-8dd3-900c118bd010.png" alt="" width="360" height="230">
+                            <div class="file-box file-box_book">
+                                <input type="submit" name="submit" class="round_m file_btn" value="审核中" />
+                            </div>
+
+                </div>
+            </li>
+
+
+            <li data-id="2">
+                <div class="box">
+
+                        <h5>学生证</h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+
+
+            <li data-id="3">
+                <div class="box">
+
+                        <h5>毕业证</h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+
+            <li data-id="5">
+                <div class="box">
+
+                        <h5>工作证明</h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+
+            <li data-id="4">
+                <div class="box">
+
+                        <h5>教师资格证</h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+
+
+
+            <li data-id="6">
+                <div class="box">
+
+                        <h5><input type="text" class="fill_text" placeholder="其他证书"></h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+
+            <li data-id="7">
+                <div class="box">
+
+                        <h5><input type="text" class="fill_text" placeholder="其他证书"></h5>
+                        <img src="/images/icon/pic.gif" alt="" width="360" height="230">
+                        <div class="file-box file-box_book">
+                            <input type="button" class="round_m file_btn" value="选择文件" onclick="UploaderImgClick(this)" />
+                        </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--end列表-->
+
+
+
+    <div class="btn_c"><input type="button" id="btnSave" class="login_btn round_m transition_a" value="完成证件资料"></div>
+    <!--end居中按钮-->
+
+</div>
+<!--end一行的右-->
+
+<script>
+    $("#btnSave").click(function () {
+        $.post("/teacher/UpdateShowCer", { "isShow": $("#showCer").find(":checkbox").prop("checked") }, function (res) {
+            if (res.success) {
+                window.location = "/teacher";
+            } else {
+                alert(res.message);
+            }
+            return false;
+        });
+    });
+</script>
+    <!--end中间区域-->
+
+
+
+
+
+   
+</body>
+</html>

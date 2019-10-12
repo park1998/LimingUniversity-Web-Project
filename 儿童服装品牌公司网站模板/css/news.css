@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+/*首页*/
+
+.main{ width:1200px; height:auto; margin:20px auto 0; overflow:hidden}
+.mainl{width:220px; height:auto; float:left;}
+.mainl-s{width:220px; height:37px; background:url(../images/xint.jpg) no-repeat; text-align:center; padding-top:31px;}
+.mainl-s ul li{width:220px; height:37px; text-align:center; }
+.mainl-s .bg{font-size:18px; color:#6c5f50; font-family:"DFPShaoNvW5-GB"; font-weight:bold;color:#FFF;}
+.mainl-s .bg span{ font-size:14px; font-family:Arial; font-weight:normal; color:#FFF;}
+.mainl-s ul .bg { padding-top:30px; width:220px; height:48px; color:#FFF; }
+.mainl-c{width:218px; height:auto; border:1px solid #999;font-weight:bold}
+.mainl-c ul li{width:220px; height:58px; text-align:center; padding-top:25px; border-bottom:1px dotted #999999 ;  }
+.mainl-c ul li a span{ font-size:14px; color:#dddbd9; font-family:Arial}
+.mainl-c ul li a{ color:#6c5f50;font-family:"DFPShaoNvW5-GB"; }
+.mainl-c ul li.no{ border-bottom:none}
+
+.mainl-f{width:220px; height:63px; background:url(../images/xint.jpg) no-repeat; text-align:center; padding-top:5px; font-family:"DFPShaoNvW5-GB";  }
+.mainl-f ul li{width:220px; height:43px; text-align:center; padding-top:25px;}
+.mainl-f ul li a{font-size:18px; color:#6c5f50; color:#FFF; font-weight:bold }
+.mainl-f ul li a span{ font-size:14px;font-family:Arial; font-weight:normal}
+
+
+.mainr{ width:940px; height:auto; float:right; padding-left:40px}
+.mainr-s{ width:980px; height:70px; border-bottom:1px solid #999}
+.mainr-sl{width:330px; height:70px; float:left}
+/*新闻详情页*/
+.new{width:300px; height:70px; float:left}
+.news{width:130px; height:37px; float:left; margin-top:20px}
+.news img{width:130px; height:37px; float:left; margin-top:20px}
+.new p{margin-top:20px;color:#6c5f50; font-size:18px }
+.new p span{font-size:12px}
+/*产品中心*/
+.pr{width:360px; height:70px; float:left}
+.mainr-tu{ width:940px; height:auto; clear:both}
+.mainr-tu ul li{ float:left; width:283px; height:auto; text-align:center;}
+.mainr-tu ul li img{ margin-bottom:30px;margin-top:20px; }
+.mainr-tu ul .bian{ width:283px; height:210px;margin:0 45px;}
+.mainr-tu ul li p a{ font-size:12px; color:#000;font-family:"微软雅黑"}
+/*产品中心2*/
+.mainr-ch{ width:940px; height:auto; overflow:hidden}
+.mainr-chs{ width:480px; height:80px; margin-top:25px;}
+.mainr-chs h2{ font-size:14px; color:#1f6ab0; font-weight:normal}
+.mainr-chs table{ width:480px; height:40px; line-height:25px}
+.mainr-chs span{ background:url(../images/dian.png) no-repeat 0 5px; padding-left:10px;font-size:12px;}
+.mainr-chc{ width:940px; height:130px; position:relative; margin-top:50px} 
+.lefi{ background:url(../images/lefi.jpg); width:27px; height:46px; position:absolute; left:0; top:42px}
+.riget{background:url(../images/riget.jpg); width:27px; height:46px; position:absolute; right:0; top:42px}
+.yifu{ width:708px;; height:130px; margin:0 auto; overflow:hidden}
+.yifu ul li{ float:left;  width:177px; height:130px;}
+.mainr-chc img{ width:177px; height:130px}
+
+.mainr-chx{ width:940px; height:auto; margin-top:10px; margin-bottom:120px}
+.mainr-chx h2{font-size:16px; font-weight:normal; margin-bottom:15px; margin-top:40px;font-family:"微软雅黑"}
+.mainr-chx b{ font-size:14px;font-weight:normal;; margin-bottom:15px}
+.mainr-chx p{ font-size:12px; text-indent:2em; line-height:25px; letter-spacing:1px; font-family:"微软雅黑"}
+.mainr-chx p.nono{ text-indent:0em}
+.mainr-chx .hh{font-size:14px; margin-top:15px;text-indent:2em; margin-bottom:10px;font-family:"微软雅黑"}
+
+.mainr-sl img{width:220px; height:35px; float:left; margin-top:20px; margin-right:10px}
+.mainr-sl p{margin-top:20px;color:#6c5f50; font-size:18px; }
+.mainr-sl p span{font-size:12px;}
+.mainr-sr{width:250px; height:70px; float:right;margin-top:20px;}
+.mainr-sr a{ font-size:12px; color:#000  }
+/*新闻详情页*/
+.mainr-t{font-size:12px;}
+.mainr-t h2{ font-size:16px; color:#6c5f50; text-align:center; margin-top:40px; margin-bottom:30px}
+.mainr-t .moshi{ text-align:center; margin-bottom:35px}
+.mainr-t p{  color:#585858; line-height:20px; margin-bottom:30px}
+
+
+
+
+.mainr-x{width:940px; height:auto}
+.mainr-x h2{ font-size:16px; font-weight:normal; margin-bottom:25px; margin-top:20px}
+.mainr-x p{ font-size:12px; letter-spacing:1px; text-indent:1em;color:#797978; margin-top:10px; margin-bottom:20px}
+.mainr-x span{ font-size:12px; letter-spacing:2px; color:#797978}
+.mainr-x h3{ font-size:14px; color:#7a7979;}
+/*新闻中心*/
+.lie{ width:940px; height:auto; margin-top:25px; font-size:12px; }
+.lie ul li{ width:940px; height:auto; line-height:30px;float:left}
+.lie ul li a{ color:#6c5f50; }
+.lie ul li span{color:#6c5f50; float:right}
+.ye{ width:940px; height:auto; text-align:center; margin-bottom:70px; line-height:110px; font-size:12px;font-family:"微软雅黑"; color:#000; }
+.ye a{ color:#000; margin-left:10px;padding-right:5px; padding-left:8px; margin-right:5px }
+.ye .se { background:#1f6ab0; color:#FFF;}
+.ye a:hover{ background:#1f6ab0; color:#FFF; }
+/*联系我们*/
+.mainr-di{ width:940px; height:auto; margin-top:40px;}
+.mainr-di table{ width:800px; height:500px; margin-top:30px; line-height:20px }
+.ge{ text-align:right;; font-size:14px}
+.txt{ width:400px; height:20px}
+.kuan{ height:23px; font-size:12px}
+.dian{ font-size:20px; color:#999999}

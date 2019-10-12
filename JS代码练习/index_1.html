@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="text" type="text" />
+		<input id="btn" type="button" value="确定" />
+		<img id="img" src="" width="300px"/>
+		<select id="select">
+			<option>北京</option>
+			<option>上海</option>
+			<option>深圳</option>
+		</select>
+		<p id="P">这是一段文字。。。</p> <!--innerHTML 读取HTML所有内容-->
+		
+		<script>
+			window.onload=function(){
+				var text1=document.getElementById('text');
+				var btn1=document.getElementById('btn');
+				var img1=document.getElementById('img');
+				var select1=document.getElementById('select');
+				var P1=document.getElementById('P');
+				
+				btn1.onclick=show;
+				
+				function show(){
+//					img1.src=text1.value;
+//					text1.value=select1.value;
+//                  alert(P1.innerHTML);	
+ 					P1.innerHTML=text1.value;
+ 					text1.value="";
+				}
+			}
+		</script>
+	</body>
+</html>

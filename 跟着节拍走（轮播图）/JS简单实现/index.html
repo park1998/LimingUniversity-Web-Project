@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script>
+			function toGreen(){
+				document.getElementById('div1').style.width='300px';
+				document.getElementById('div1').style.height='300px';
+				document.getElementById('div1').style.background='black';
+			}
+			function toBlue(){
+				document.getElementById('div1').style.width='100px';
+				document.getElementById('div1').style.height='100px';
+				document.getElementById('div1').style.background='red';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1" onmouseover="toGreen()" onmouseout="toBlue()" >
+			
+		</div>
+	</body>
+</html>

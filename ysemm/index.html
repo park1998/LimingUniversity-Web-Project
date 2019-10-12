@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>木水年华家教网</title>
+		<meta name="description" content="深圳亿升金融服务有限公司作为国内知名金融信息咨询服务机构，汇集银行、证券、基金、信托等业界精英，深度钻研于各金融领域。 贯彻和落实国家和地方政府相关政策与制度，发挥专业机构优势，促进城市发展与金融的高度融合。" />
+		<meta name="keywords" content="亿升财富,亿升金融,政府融资,平台融资,PPP项目融资,政府项目合作,PPP合作,资金合作" />
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/superslide.2.1.js"></script>
+		<style>
+			.header-ul{
+				margin-top: -20px;
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+			.header-ul li{
+				float: left;	
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mask">
+			<div class="message-box">
+				<a href="javascript:void(0)" class="goMobile"><i class="phone"></i>进入移动版</a>
+				<a href="javascript:void(0)" class="closeLayer"><i class="mac"></i>留在电脑版</a>
+			</div>
+		</div>
+		<div class="container">
+
+			<div class="header">
+				<div class="header-company">
+					<div class="company-logo" style="position: relative;">
+						<img src="picture/tux-161406__340.png" alt="亿升财富">
+						<span style="font-family: '微软雅黑'; color: cadetblue; font-size: 24px;position: absolute;left: 50px;border-bottom:2px solid darkgrey ; ">木水年华家教网</span>
+					</div>
+					<div class="company-tel">
+						<div class="tel-title"><i class="icon-tel"></i> 客服热线：</div>
+						<div class="tel-num">400-661-1313</div>
+						<ul class="header-ul">
+							<li><a href="">登陆</a>&nbsp;|&nbsp;</li>
+							<li><a href="">注册</a>&nbsp;|&nbsp;</li>
+							<li><a href="">退出登陆</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-nav" style="position: absolute; height: 55px; background-color: rgba(21, 45, 71, 0.78); top: 86px; width: 100%; z-index: 999;">
+					<ul class="nav">
+						<li class="active">
+							<a href="index.html">网站首页</a>
+						</li>
+
+						<li style="border-top:3px solid rgba(21, 45, 71, 0.78);">
+							<a href='aboutus.html'>企业简介</a>
+						</li>
+
+						<li style="border-top:3px solid rgba(21, 45, 71, 0.78);">
+							<a href='list.html'>行业新闻</a>
+						</li>
+
+						<li style="border-top:3px solid rgba(21, 45, 71, 0.78);">
+							<a href='cooperation.html'>商务合作</a>
+						</li>
+
+						<li style="border-top:3px solid rgba(21, 45, 71, 0.78);">
+							<a href='cooperation.html'>区域代理</a>
+						</li>
+
+						<li style="border-top:3px solid rgba(21, 45, 71, 0.78);">
+							<a href='contactus.html'>联系我们</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="slider">
+
+				<div class="bd">
+					<ul>
+						<li class="on">
+							<a href="javascript:void(0)"><img src="picture/pexels-photo-210661.jpeg" alt="亿升财富 财富易升" /></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><img src="https://cdn.pixabay.com/photo/2016/11/29/09/41/bag-1868758_1280.jpg" alt="汇集金融领域精英 提供专业引资服务" /></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><img src="picture/354572-106.jpg" alt="亿升财富诚招区域代理" /></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="hd">
+					<ul></ul>
+				</div>
+
+				<div class="pnBtn prev"><span class="blackBg"></span>
+					<a class="arrow" href="javascript:void(0)"></a>
+				</div>
+				<div class="pnBtn next"><span class="blackBg"></span>
+					<a class="arrow" href="javascript:void(0)"></a>
+				</div>
+
+			</div>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+
+					/* 设置第一张图片 */
+					$(".slider .bd li").first().before($(".slider .bd li").last());
+
+					/* 鼠标悬停箭头按钮显示 */
+					$(".slider").hover(function() {
+						$(this).find(".arrow").stop(true, true).fadeIn(300)
+					}, function() {
+						$(this).find(".arrow").fadeOut(300)
+					});
+
+					/* 滚动切换 */
+					$(".slider").slide({
+						titCell: ".hd ul",
+						mainCell: ".bd ul",
+						effect: "leftLoop",
+						autoPlay: true,
+						vis: 1,
+						autoPage: true,
+						trigger: "click"
+					});
+
+				});
+			</script>
+
+			<div class="main">
+				<div class="index-box">
+					<ul>
+						<li>
+							<img src="DisplayImageServlet?src=${P1.imgurl}" alt="" width="321" height="194">
+							<h1>关于我们</h1>
+							<h2>About Us</h2>
+							<div class="item-content">
+								<p>深圳亿升金融服务有限公司作为国内知名金融信息咨询服务机构，汇集银行、证券、基金、信托等业界精英，深度钻研于各金融领域。 贯彻和落实国家和地方政府相关政策与制度，发挥专业机构优势，促进城市发展与金融的高度融合。</p>
+							</div>
+							<a href="#" class="index-link">了解更多</a>
+						</li>
+						<li>
+							<img src="picture/index-img2.jpg" alt="亿升财富行业新闻">
+							<h1>行业新闻</h1>
+							<h2>News</h2>
+							<div class="item-content">
+								<ul class="index-news">
+									<li><i></i>
+										<a href="/news/companynotices/2017/0601/222.html" title="亿升财富新网址http://www.ysemm.cn">亿升财富新网址http://www.ysemm.cn</a>
+									</li>
+									<li><i></i>
+										<a href="/news/industryinformations/2017/0522/211.html" title="“中国PPP良好实践”国际研讨会在京召开">“中国PPP良好实践”国际研讨会在京召开</a>
+									</li>
+									<li><i></i>
+										<a href="/news/industryinformations/2017/0531/221.html" title="我国经济稳中向好发展态势不可逆转">我国经济稳中向好发展态势不可逆转</a>
+									</li>
+									<li><i></i>
+										<a href="/news/industryinformations/2017/0411/186.html" title="资本投融新模式试验：PPP分食雄安万亿级投资盛宴">资本投融新模式试验：PPP分食雄安万亿级投资盛宴</a>
+									</li>
+									<li><i></i>
+										<a href="/news/industryinformations/2017/0407/183.html" title="亚行在华首个养老PPP项目落户宜昌">亚行在华首个养老PPP项目落户宜昌</a>
+									</li>
+
+								</ul>
+							</div>
+							<a href="#" class="index-link">了解更多</a>
+						</li>
+						<li>
+							<img src="picture/index-img3.jpg" alt="亿升财富商务合作">
+							<h1>商务合作</h1>
+							<h2>Cooperation</h2>
+							<div class="item-content">
+								<p>我们与多家银行、证券、信托等金融机构建立长期战略合作，为项目开发商、平台机构（城投、交投、旅游投等）成功推荐引资；同时我们还与民营资本、大型央企达成合作，针对相关项目进行PPP、BT、BOT...投资、建设、运营。</p>
+							</div>
+							<a href="/a/cooperation/" class="index-link">了解更多</a>
+						</li>
+						<li>
+							<img src="picture/index-img4.jpg" alt="联系亿升财富">
+							<h1>联系我们</h1>
+							<h2>Contact Us</h2>
+							<div class="item-content">
+								<p>联系电话：0736-7226000</p>
+								<p>客服中心：400-661-1313</p>
+								<p>公司邮箱：kf@ysemm.cn</p>
+								<p>公司地址：常德市武陵区洞庭大道368号浙商广场B座16楼</p>
+							</div>
+							<a href="#" class="index-link">了解更多</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="flink">
+					<div class="flink-box">
+						<div class="flink-title">
+							<h1>友情链接</h1>
+						</div>
+						<div class="flink-items">
+							<div class="bd">
+								<ul class="picList">
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.mof.gov.cn/index.htm' target='_blank' rel='nofollow' title='中华人民共和国财政部'><img alt='中华人民共和国财政部' src='picture/flink1.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.cdb.com.cn/' target='_blank' rel='nofollow' title='国家开发银行'><img alt='国家开发银行' src='picture/flink2.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.eximbank.gov.cn/' target='_blank' rel='nofollow' title='中国进出口银行'><img alt='中国进出口银行' src='picture/flink3.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.pppcenter.org.cn/' target='_blank' rel='nofollow' title='政府和社会资本合作（PPP）研究中心'><img alt='政府和社会资本合作（PPP）研究中心' src='picture/flink4.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://bank.pingan.com/' target='_blank' rel='nofollow' title='平安银行'><img alt='平安银行' src='picture/flink5.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.zritc.com/' target='_blank' rel='nofollow' title='中融信托'><img alt='中融信托' src='picture/flink6.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.sac.net.cn/' target='_blank' rel='nofollow' title='中国证券业协会'><img alt='中国证券业协会' src='picture/flink7.jpg' /></a>
+										</div>
+									</li>
+
+									<li>
+										<div class='pic'>
+											<a href='http://www.cbrc.gov.cn/index.html' target='_blank' rel='nofollow' title='中国银行业监督管理委员会'><img alt='中国银行业监督管理委员会' src='picture/flink8.jpg' /></a>
+										</div>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+
+						<script type="text/javascript">
+							jQuery(".flink-items").slide({
+								mainCell: ".bd ul",
+								autoPlay: true,
+								effect: "leftMarquee",
+								vis: 6,
+								interTime: 50
+							});
+						</script>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="footer">
+				<div class="show-rz">
+					<p style="text-align:center;">
+						<a id="_pingansec_bottomimagelarge_p2p" href="http://si.trustutn.org/info?sn=321170316000571380559&certType=4"><img class="zqrz" src="picture/p2p_bottom_large_img.jpg" /></a>
+						<a style="text-align:center;" href="http://webscan.360.cn/index/checkwebsite/url/www.ysemm.cn"><img border="0" src="picture/360jiance.png" /></a>
+					</p>
+				</div>
+				<p>Copyright © 2015 - 2017 Ysemm. All Rights Reserved</p>
+				<p>
+					<a href="#" target="_blank" rel="nofollow">备案号：粤ICP备15071992号-1 更多模板：
+						<a href="http://www.mycodes.net/" target="_blank">源码之家</a>
+					</a>
+				</p>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript">
+			// 判断设备是否为手机
+			if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+				if($.cookie("isClose") != 'yes') {
+					// 首先 
+					$(".mask").show();
+					var swinHig = $('.message-box').height() * -1;
+					var winHig = $(window).height() / 5;
+					$(".message-box").css({
+						"marginTop": swinHig
+					}); //自上而下
+					$(".message-box").show();
+					$(".message-box").animate({
+						"marginTop": winHig
+					}, 1000);
+					$(".message-box .closeLayer").click(function() {
+						$(this).parent().fadeOut(500);
+						$(".mask").hide();
+						$.cookie("isClose", 'yes', {
+							expires: 1
+						}); //1天内有效
+					});
+					$(".message-box .goMobile").click(function() {
+						// $.cookie("isClose",'yes',{ expires:1});  //1天内有效
+						window.location.href = 'http://www.mycodes.net';
+					});
+				}
+			}
+		</script>
+	</body>
+
+</html>

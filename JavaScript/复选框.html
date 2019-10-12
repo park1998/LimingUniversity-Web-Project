@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var bbb = document.getElementById('btn1');
+				var nobbb=document.getElementById('btn2');
+				var einput = document.getElementsByTagName('input');
+                bbb.onclick=function(){
+                	for(i=1;i<einput.length;i++)
+                	{
+                		einput[i].checked=true;
+                	}
+                }
+			    nobbb.onclick=function(){
+			    	for(i=1;i<einput.length;i++)
+                	{
+                		einput[i].checked=false;
+                	}
+			    }
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<input id="btn1" type="button" value="全选"/><br />
+		<input id="btn2" type="button" value="取消"/><br />
+		<div id="div1">
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+		</div>
+	</body>
+
+</html>

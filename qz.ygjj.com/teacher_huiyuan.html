@@ -1,0 +1,574 @@
+﻿<!doctype html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="viewport" content="width=1200" />
+		<title>水木年华家教</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/code.css">
+
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+
+		<script src="js/jQuery.rTabs.js"></script>
+		<script src="js/search_tab.js"></script>
+
+		<link href="js/brief.css" rel="stylesheet" />
+		<script src="js/jquery.artDialog.min.js"></script>
+
+		<script>
+			artDialog.alert = function(content, callback) {
+				return artDialog({
+					id: 'Alert',
+					icon: 'warning',
+					fixed: true,
+					// lock: true,
+					width: 250,
+					height: 50,
+					content: content,
+					ok: true,
+					close: callback
+				})
+			};
+
+			artDialog.tips = function(content, time) {
+				return artDialog({
+						id: 'Tips',
+						title: false,
+						cancel: false,
+						fixed: true,
+						// lock: true,
+						width: 250,
+						height: 50
+					})
+					.content('<div style="padding: 0 1em;">' + content + '</div>')
+					.time(time || 1);
+			};
+		</script>
+
+		<script src="/js/code.js"></script>
+		<link href="/css/code.css" rel="stylesheet" />
+		<script>
+			function payVip() {
+				if($.trim($("#ulVip").GetDropdownValue()) == '') {
+					alert('请选择支付种类');
+					return false;
+				}
+				$("#payFormVip input[name='PayExpire']").val($.trim($("#ulVip").GetDropdownValue()));
+				var left = 0;
+				var price = $("#ulVip :radio[checked]").data("price");
+				if(price <= left) {
+					alert('充值金额' + price + '小于等于可抵扣金额' + left + ',请选择其他支付种类');
+					return false;
+				}
+				$('#payFormVip').submit();
+			};
+
+			function payDiamond() {
+				if($.trim($("#ulDiamond").GetDropdownValue()) == '') {
+					alert('请选择支付种类');
+					return false;
+				}
+				$("#payFormDiamond input[name='PayExpire']").val($.trim($("#ulDiamond").GetDropdownValue()));
+				var left = 0;
+				var price = $("#ulDiamond :radio[checked]").data("price");
+				if(price <= left) {
+					alert('充值金额' + price + '小于等于可抵扣金额' + left + ',请选择其他支付种类');
+					return false;
+				}
+				$('#payFormDiamond').submit();
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<input id="RedirectUrl" name="RedirectUrl" type="hidden" value="/account/login?returnUrl=http://qz.ygjj.com/teacher/pay" />
+		<div class="header min_1200">
+			<div class="w_1200">
+				<h1 class="logo fl png_img"><a href="/home"><img style="margin-top: -30px;" src="images/logo2.png" alt="水木年华家教"></a></h1>
+				<h3 class="h_city fl">
+        </h3>
+
+				<!--star搜索-->
+				<div class="pub-search">
+					<form class="search-form" method="GET" action="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">
+						<div class="search-box">
+							<ul class="transition_a">
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="教员搜索" target="http://qz.ygjj.com/jy_a0_s0_c0_f0_x0_g1">教员</li>
+								<li placeholder="学员搜索" target="http://qz.ygjj.com/xy_a0_s0_d0_x0_t0_o0_g1">学员</li>
+							</ul>
+							<input placeholder="搜教员\搜学员" type="text" name="keyword" value="" />
+							<input type="button" class="search_btn" value="搜索">
+						</div>
+					</form>
+				</div>
+				<!--end搜索-->
+				<div class="header_r fr">
+					<span class="font_16">客服微信：</span>
+					<img src="images/kefu.png" class="wechat_img" alt="水木年华家教客服微信" width="80" height="80">
+
+					<span class="font_13">
+                                    <b class="orange_link">
+                        <a href="/account/logout" class="heada">退出</a>
+                    </b><em class="china"></em>
+                    <a href="/Teacher/Index" class="heada">我的</a>
+                                            </span>
+				</div>
+				<!--end头文件右-->
+			</div>
+		</div>
+		<!--end头文件-->
+
+		<!--end头文件-->
+
+		<div class="nav min_1200">
+			<div class="tnav w_1200" id="slideNav">
+				<span><a href="/home" class="current_nav">泉州家教</a></span>
+				<span><a href="/home/cost">家教价格</a></span>
+				<span><a href="/Teachers.aspx">家教老师库</a></span>
+				<span><a href="/Orders.aspx">学员库</a></span>
+				<i class="tavline" id="slideNavLine"></i>
+			</div>
+		</div>
+
+		<div class="tearch_banner min_1200">
+			<div class="w_1200">
+				<dl class="tearch_banner_dl png_img">
+					<dd class="f_r">
+						<ul class="list_ul gray_link gray_text">
+							<li>
+								<span class="font_34 eng">
+                                0
+                            </span>
+								<p>
+									可用查看学员次数
+								</p>
+							</li>
+							<li>
+								<span class="font_34 eng">
+                                1
+                            </span>
+								<p>
+									可用预约次数
+								</p>
+							</li>
+						</ul>
+					</dd>
+					<dt>
+                    <a href="/teacher/album">
+                        <div class="pic_140 round_img img_shadow">
+                            <img src="/images/head/female.png" alt="" width="140" height="140">
+                        </div>
+                        <h4>林教员</h4>
+                    </a>
+                    <div class="t">
+                        ID：5018961
+                        <span class="ml_20">
+                                <img src="images/ok_arrow_s.png" alt="ok" width="20" height="20">
+简历有效                        </span>
+                    </div>
+                </dt>
+
+				</dl>
+			</div>
+		</div>
+		<!--end一行-->
+		<!--end一行-->
+		<!-- end nav -->
+		<div class="w_1200 d_center white_bj">
+
+			<div class="fl w_300 box_line">
+				<dl class="tearch_l_nav">
+					<dt><span>快捷操作</span></dt>
+					<dd>
+						<div class="t clearfix">
+							<h5>简历更新</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/resume">修改简历</a>
+								</li>
+								<li>
+									<a href="/teacher/password">密码/权限</a>
+								</li>
+								<li>
+									<a href="/teacher/certificate">证件上传</a>
+								</li>
+								<li>
+									<a href="/teacher/album">我的相册</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>家教情况</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/success">成功记录</a>
+								</li>
+								<li>
+									<a href="/teacher/myview">查看记录</a>
+								</li>
+								<li>
+									<a href="/teacher/appoint">预约记录</a>
+								</li>
+								<li>
+									<a href="/teacher/judge">学员评价</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="t clearfix">
+							<h5>充值</h5>
+							<ul class="list_2">
+								<li>
+									<a href="/teacher/pay">购买会员</a>
+								</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--end一行的左-->
+
+			<!--end一行的左-->
+			<div class="r_cell box_r">
+				<h4 class="r_th_y">
+        <b>会员充值</b>
+        <span class="red_text ml_20 font_14">会员身份越高，接到家教次数越高</span>
+    </h4>
+
+				<ul class="list_4 buy_ul font_15 click_ul_li">
+					<li class="buy_1">
+						<h5>特权一览</h5>
+						<div class="even_p d">
+							<p>价格</p>
+							<p>获得家教概率</p>
+							<p>平均排名</p>
+							<p>查看学员电话次数</p>
+							<p>免费预约学员次数</p>
+							<p>被查看概率</p>
+							<p>有效期</p>
+							<p>供学员免费联系</p>
+							<p>接家教费用</p>
+							<p>家教优先推荐</p>
+							<p>近期查看我的学员</p>
+						</div>
+					</li>
+					<li class="buy_2 li_o">
+						<div class="box_border"></div>
+						<h5><span class="png th_arrow_p"></span>高级会员</h5>
+						<div class="even_p d">
+							<p><b class="orange_text">&yen;49.00</b></p>
+							<p>高</p>
+							<p>高</p>
+							<p><b class="orange_text">2</b>次</p>
+							<p><b class="orange_text">5 </b>次</p>
+							<p>高</p>
+							<p><b class="orange_text">30</b>天</p>
+							<p><b class="orange_text">5</b>次</p>
+							<p>无</p>
+							<p><img src="/images/icon/ok_t.png" alt="" width="30" height="30"></p>
+							<p><img src="/images/icon/ok_t.png" alt="" width="30" height="30"></p>
+						</div>
+					</li>
+
+					<li class="buy_3 li_o">
+						<div class="box_border"></div>
+						<h5><span class="png th_arrow_p th_arrow_p2"></span>钻石会员</h5>
+						<div class="even_p d">
+							<p>
+								<b class="orange_text">&yen;199.00</b>
+							</p>
+							<p>非常高</p>
+							<p>非常高</p>
+							<p>
+								<b class="orange_text">10</b>次
+							</p>
+							<p>
+								<b class="orange_text">20</b>次
+							</p>
+							<p>非常高</p>
+							<p>
+								<b class="orange_text">30</b>天
+							</p>
+							<p>不限</p>
+							<p>无</p>
+							<p>
+								<img src="/images/icon/ok_t.png" alt="" width="30" height="30">
+							</p>
+							<p>
+								<img src="/images/icon/ok_t.png" alt="" width="30" height="30">
+							</p>
+						</div>
+					</li>
+
+					<li class="buy_2 li_o">
+						<div class="box_border"></div>
+						<h5><span class="png th_arrow_p th_arrow_p3"></span>普通会员</h5>
+						<div class="even_p d">
+							<p>免费</p>
+							<p>低</p>
+							<p>低</p>
+							<p>无</p>
+							<p><b class="orange_text">1</b>次</p>
+							<p>低</p>
+							<p>无</p>
+							<p><b class="orange_text">1</b>次</p>
+							<p>无</p>
+							<p><img src="/images/icon/error_t.png" alt="" width="30" height="30"></p>
+							<p><img src="/images/icon/error_t.png" alt="" width="30" height="30"></p>
+						</div>
+					</li>
+				</ul>
+				<ul class="note_ol blue_link" style="padding-left: 1.5em;">
+					<li>1.购买会员后，会员有效期结束，会员数据将保留30天，30天后清空；30天内续费，会员有效期重新以新会员计算，其他各项数值累加</li>
+					<li>2.购买会员后，15天内和学员接洽累计次数消耗不大于三次：①可以申请延长会员期限 ②可以申请退款
+						<a href="/help/TeacherPayNotice" class="orange_link">查看详细规则</a>
+					</li>
+				</ul>
+
+				<div class="btn_c">
+					<a href="javascript:void(0)" class="round_m login_btn btn_240 transition_a cd-popup-trigger" target="#VipModal">购买高级会员</a>
+					<a href="javascript:void(0)" class="round_m login_btn btn_240 m_l_b transition_a cd-popup-trigger" target="#DiamondModal">购买钻石会员</a>
+				</div>
+
+			</div>
+			<!--end一行的右-->
+			<!--star_弹框-->
+			<div class="cd-popup" id="VipModal">
+				<div class="cd-popup-container" style="width: 500px;">
+					<a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+					<h4 class="f_code_th">
+                购买高级会员
+                <p>请选择购买期限</p>
+            </h4>
+					<ul class="buy_club" id="ulVip">
+
+						<li data-id="1">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>129.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                                <input type="radio" id="a-1" name="a" value="1" data-price="49.00">
+                                <label for="a-1">49.00元/30天</label>
+                            </span>
+						</li>
+
+						<li data-id="2">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>387.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                                <input type="radio" id="a-2" name="a" value="2" data-price="141.00">
+                                <label for="a-2">141.00元/3个月</label>
+                            </span>
+						</li>
+
+						<li data-id="3">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>774.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                                <input type="radio" id="a-3" name="a" value="3" data-price="276.00">
+                                <label for="a-3">276.00元/半年</label>
+                            </span>
+						</li>
+
+						<li data-id="4">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>1548.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                                <input type="radio" id="a-4" name="a" value="4" data-price="540.00">
+                                <label for="a-4">540.00元/1年</label>
+                            </span>
+						</li>
+					</ul>
+
+					<!--end一行-->
+
+					<div class="btn_20">
+						<form action="/Trade/TeacherPay" id="payFormVip" method="post">
+							<input id="ProductId" name="ProductId" type="hidden" value="6" />
+							<input type="hidden" name="PayExpire" value="1" />
+							<input name="__RequestVerificationToken" type="hidden" value="nrPDUwIYN68_L_gbdlL2yFfYD-pC_pLauVYxBJBQiZAyxN10b4LzgIjUDNCQAGTHVu95T4gpjApgM-NR359CVTkT8r-_JWKSRI7XlwEoBYI1" />
+							<a href="javascript:void(0)" onclick="payVip();" id="btnPayVip" class="round_m submit_btn transition_a">我要购买</a>
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div class="cd-popup" id="DiamondModal">
+				<div class="cd-popup-container" style="width: 500px;">
+					<a href="#0" class="cd-popup-close f_close_btn transition_a"></a>
+					<h4 class="f_code_th">
+                购买钻石会员
+                <p>请选择购买期限</p>
+            </h4>
+
+					<ul class="buy_club" id="ulDiamond">
+
+						<li data-id="1">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>597.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                            <input type="radio" id="a-11" name="a" value="1" data-price="199.00">
+                            <label for="a-11">199.00元/30天</label>
+                        </span>
+						</li>
+
+						<li data-id="2">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>1791.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                            <input type="radio" id="a-22" name="a" value="2" data-price="569.00">
+                            <label for="a-22">569.00元/3个月</label>
+                        </span>
+						</li>
+
+						<li data-id="3">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>3582.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                            <input type="radio" id="a-33" name="a" value="3" data-price="1099.00">
+                            <label for="a-33">1099.00元/半年</label>
+                        </span>
+						</li>
+
+						<li data-id="4">
+							<span class="fr">
+                                <span class="round_m sale_original_text"><del>7164.00</del></span>
+							<span class="round_m sale_s_text">3折</span>
+							</span>
+
+							<span class="sel_box_r">
+                            <input type="radio" id="a-44" name="a" value="4" data-price="2098.00">
+                            <label for="a-44">2098.00元/1年</label>
+                        </span>
+						</li>
+					</ul>
+
+					}
+
+					<!--end一行-->
+
+					<div class="btn_20">
+						<form action="/Trade/TeacherPay" id="payFormDiamond" method="post">
+							<input id="ProductId" name="ProductId" type="hidden" value="4" />
+							<input type="hidden" name="PayExpire" value="1" />
+							<input name="__RequestVerificationToken" type="hidden" value="aVcMrHPB6pmFMikUoLOjnzkvShsbR8Cye_SeWyFHCW3QJX13bK71a2Cp2iho8HC36neqlejX1WgnhCXJNq1qxEhOj3YU2yvyee2jLJmKOVI1" />
+							<a href="javascript:void(0)" onclick="payDiamond();" id="btnPayDiamond" class="round_m submit_btn transition_a">我要购买</a>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+			<!--end_弹框-->
+
+			<!--end一行的右-->
+		</div>
+		<!--end一行-->
+
+		<div class="clearfix d_link min_1200">
+			<div class="clearfix w_1200 d_link">
+				<div class="d_link_t clearfix">
+					<div class="d_link_tel fl">
+						<h4>服务热线</h4>
+						<p>(工作日9:00~18:00)</p>
+						<div class="d orange_text big_num font_34">400-000-0000</div>
+					</div>
+					<div class="r_cell">
+						<ul class="d_link_ul list_4 fl">
+							<li>
+								<h4>会员指南</h4>
+								<p>
+									<a href="/help/iam2" rel="nofollow">我是教员</a>
+								</p>
+								<p>
+									<a href="/help/iam1" rel="nofollow">我是学员</a>
+								</p>
+								<p>
+									<a href="/help/iam3" rel="nofollow">我是辅导班</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>网站导航</h4>
+								<p>
+									<a href="/home/subject" rel="nofollow">课程科目</a>
+								</p>
+								<p>
+									<a href="/help" rel="nofollow">帮助中心</a>
+								</p>
+								<p>
+									<a href="http://www.ygjj.com" rel="nofollow">服务城市</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>简介</h4>
+								<p>
+									<a href="/help/aboutus" rel="nofollow">关于我们</a>
+								</p>
+								<p>
+									<a href="/help/service" rel="nofollow">服务声明</a>
+								</p>
+								<p>
+									<a href="/help/Pivacy" rel="nofollow">隐私保护</a>
+								</p>
+							</li>
+
+							<li>
+								<h4>合作</h4>
+								<p>
+									<a href="/help/friendlink" rel="nofollow">友情链接</a>
+								</p>
+							</li>
+						</ul>
+						<div class="r_cell d_link_wechat">
+							<h4>关注微信</h4>
+							<p><img src="images/kefu.png" alt="" width="120" height="120"></p>
+						</div>
+					</div>
+				</div>
+				<!--end一行-->
+				<!--end热门城市-->
+			</div>
+		</div>
+		<!--end链接-->
+
+		<!--返回顶部-->
+		<div class="ftool_top">
+			<a href="#" class="top_ftoolab transition_a" id="ftoolTop"></a>
+		</div>
+		<!--返回顶部-->
+
+	</body>
+
+</html>

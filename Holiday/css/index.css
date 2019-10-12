@@ -1,0 +1,483 @@
+body {
+	display: flex;
+	font-family: "微软雅黑";
+	background: whitesmoke;
+	margin: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.title {
+	height: 26px;
+	border-bottom: 1px solid gainsboro;
+}
+
+.title-font {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 26px;
+	color: gray;
+	margin-left: 20px;
+}
+
+.mian-body {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.head {
+	height: 160px;
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.head img {
+	display: inline-block;
+}
+
+.head-text {
+	position: absolute;
+	top: 30px;
+	right: 80px;
+	width: 200px;
+	height: 26px;
+}
+
+.head-button {
+	position: absolute;
+	right: 10px;
+	top: 32px;
+	height: 26px;
+	width: 60px;
+}
+
+.head ul {
+	height: 60px;
+	margin-top: -16px;
+	background: #1d71b9;
+}
+
+.head ul li {
+	float: left;
+	list-style: none;
+	width: 80px;
+	height: 60px;
+	margin-right: 0px;
+	text-align: center;
+	background: #1d71b9;
+	line-height: 60px;
+}
+
+.head ul li:hover {
+	background: #2e373f;
+}
+
+.head ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+}
+
+.topbox {
+	width: 1000px height: 270px;
+	background: #e5e5e5;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	position: relative;
+}
+
+.topbox h3 a {
+	font-size: 24px;
+	font-weight: normal;
+	color: #000000;
+	position: absolute;
+	top: 30px;
+	left: 480px;
+}
+
+.topbox h4 a {
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000000;
+	position: absolute;
+	top: 68px;
+	left: 480px;
+}
+
+.topbox p {
+	width: 480px;
+	position: absolute;
+	left: 480px;
+	top: 88px;
+}
+
+.mazu img {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.list-xinwen {
+	width: 1000px;
+	height: 660px;
+	margin-top: 20px;
+	background: white;
+}
+
+.list-box {
+	width: 200px;
+	height: 340px;
+	float: left;
+	padding: 10px 0px;
+	margin-left: 40px;
+	margin-top: -10px;
+	margin-bottom: -28px;
+}
+
+.list-box ul {
+	margin-left: -30px;
+}
+
+.list-box ul li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	padding-left: 10px;
+	border-bottom: 1px #ddd dotted;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	background: url(../img/triangle-right.png) no-repeat -20% 50%;
+}
+
+.list-box ul li a {
+	font-size: 14px;
+	color: black;
+}
+
+.list-box ul li a:hover {
+	color: blueviolet;
+}
+
+.row-box {
+	width: 200px;
+	height: 40px;
+	background: #1d71b9;
+}
+
+.row-box h3 a {
+	line-height: 40px;
+	color: white;
+	font-size: 16px;
+	margin-left: 20px;
+}
+
+.photo {
+	width: 1000px;
+	height: 230px;
+	margin-top: 20px;
+	position: relative;
+	background: white;
+}
+
+.photo h3 {
+	position: absolute;
+	top: 0px;
+	left: 36px;
+	
+	font-family: "微软雅黑";
+}
+
+#imgdiv {
+	width: 700px;
+	height: 108px;
+	position: relative;
+	background: red;
+	overflow: hidden;
+	position: absolute;
+	top: 80px;
+	left: 140px;
+}
+
+#imgul{
+    position: absolute;
+	top: -16px;
+	left: -40px;
+}
+
+#imgul li {
+	float: left;
+	width: 178px;
+	height: 108px;
+	list-style: none;
+}
+
+.LEFT {
+	position: absolute;
+	left: 40px;
+	bottom: 76px;
+}
+
+.RIGHT {
+	position: absolute;
+	right: 40px;
+	bottom: 76px;
+}
+
+.content-left {
+	width: 680px;
+	height: 43%;
+	display: inline-block;
+	margin-top: 10px;
+	background: white;
+}
+
+.con {
+	padding: 0;
+	margin: 0;
+	margin-left: 20px;
+}
+
+.content-left ul li {
+	width: 640px;
+	height: 180px;
+	margin-top: 16px;
+	border-bottom: 2px solid gainsboro;
+}
+
+.content-left ul li img {
+	width: 200px;
+	height: 140px;
+	float: left;
+	margin-top: 16px;
+}
+
+.con h2 a {
+	color: #1d71b9;
+	font-size: 18px;
+	text-decoration: underline;
+	margin-left: 20px;
+}
+
+.text {
+	font-size: 14px;
+	display: inline-block;
+	width: 320px;
+	margin-left: 60px;
+	margin-top: -6px;
+}
+
+.content-right {
+	width: 290px;
+	height: 43%;
+	background: white;
+	float: right;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#sidebar {
+	float: right;
+	/*width: 264px;*/
+}
+
+.rlist1 h3 span {
+	font-family: "微软雅黑";
+	font-size: 26px;
+	margin-left: -24px;
+	float: left;
+	width: 260px;
+	color: #1d71b9;
+	border-bottom: 1px solid gainsboro;
+	margin-bottom: 20px;
+}
+
+#randlog li a {
+	color: black;
+	font-size: 16px;
+}
+
+#randlog li {
+	border-bottom: 1px solid gainsboro;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#randlog li a:hover {
+	color: blueviolet;
+}
+
+#randlog {
+	margin-left: -66px;
+	margin-right: 14px;
+}
+
+.footer {
+	width: 1000px;
+	height: 140px;
+	border-top: 3px solid #F4791F;
+	margin-top: 20px;
+	background: #1d71b9;
+	position: relative;
+}
+
+.fta {
+	position: absolute;
+	top: 40px;
+	left: 300px;
+}
+
+.wrap {
+	position: absolute;
+	top: 20px;
+	left: 380px;
+}
+
+.pagenow {
+	width: 1000px;
+	height: 30px;
+	line-height: 30px;
+	background: white;
+	margin-top: 10px;
+	font-size: 12px;
+	display: inline-block;
+	color: darkgrey;
+}
+
+.pagenow a {
+	color: gray;
+	font-size: 14px;
+	margin-left: 8px;
+	margin-right: 4px;
+}
+
+.logwrap {
+	width: 630px;
+	display: inline-block;
+	margin-top: 10px;
+	background: white;
+	position: relative;
+	padding-right: 10px;
+	height: 84%;
+}
+
+.logwrap li {
+	margin-right: 26px;
+	margin-top: 30px;
+}
+
+.date {
+	color: #f4791f;
+	font-size: 13px;
+	float: left;
+	padding-right: 10px;
+	font-weight: 1000;
+	font-size: 14px;
+	padding-left: 6px;
+	margin-top: 4px;
+	margin-bottom: 8px;
+	padding-bottom: 2px;
+	border-left: 4px solid darkgray;
+	box-shadow: 4px 2px 10px #888888;
+}
+
+.logwrap p {
+	font-size: 14px;
+	float: right;
+	border-left: 4px solid darkgray;
+	box-shadow: 4px 2px 10px #888888;
+	padding-left: 20px;
+	color: dimgray;
+	width: 500px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	padding-right: 10px;
+}
+
+.logwrap p:hover {
+	color: orange;
+}
+
+.logwrap i {
+	font-style: normal;
+}
+
+.content-right1 {
+	width: 300px;
+	height: 84%;
+	background: white;
+	float: left;
+	margin-right: 40px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.content-left3 {
+	width: 680px;
+	height: 72%;
+	display: inline-block;
+	margin-top: 10px;
+	background: white;
+}
+
+.content-left3 ul li {
+	width: 640px;
+	height: 180px;
+	margin-top: 16px;
+	border-bottom: 2px solid gainsboro;
+}
+
+.content-left3 ul li img {
+	width: 200px;
+	height: 140px;
+	float: left;
+	margin-top: 16px;
+}
+
+.content-right3 {
+	width: 290px;
+	height: 72%;
+	background: white;
+	float: right;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.content-left2 {
+	width: 680px;
+	height: 72%;
+	display: inline-block;
+	margin-top: 10px;
+	background: white;
+}
+
+.content-left2 ul li {
+	width: 640px;
+	height: 180px;
+	margin-top: 16px;
+	border-bottom: 2px solid gainsboro;
+}
+
+.content-left2 ul li img {
+	width: 200px;
+	height: 140px;
+	float: left;
+	margin-top: 16px;
+}
+
+.content-right2 {
+	width: 290px;
+	height: 72%;
+	background: white;
+	float: right;
+	margin-left: 20px;
+	margin-top: 10px;
+}
